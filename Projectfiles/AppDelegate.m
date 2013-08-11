@@ -6,6 +6,7 @@
  */
 
 #import "AppDelegate.h"
+#import <mgwuSDK/MGWU.h>
 
 @implementation AppDelegate
 
@@ -16,6 +17,8 @@
 #else
 	CCLOG(@"ARC is either not available or not enabled");
 #endif
+    [MGWU loadMGWU:@"MGWUWidgets"];
+    [MGWU preFacebook];
 }
 
 -(id) alternateView
