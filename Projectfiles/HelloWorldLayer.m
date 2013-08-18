@@ -40,4 +40,7 @@
     [[CCDirector sharedDirector] replaceScene:leaderboard];
 }
 
+- (void)buttonPressed {
+    [[CCDirector sharedDirector] replaceScene:(CCScene*)self];
+}
 @end

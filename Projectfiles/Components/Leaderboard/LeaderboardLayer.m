@@ -7,7 +7,6 @@
 //
 
 #import "LeaderboardLayer.h"
-#import "CCControlButton.h"
 #import "CCScale9Sprite.h"
 #import <mgwuSDK/MGWU.h>
 
@@ -30,7 +29,7 @@
     CCSprite *leaderboardHeader;
  
     // main menu button
-    CCControlButton *mainMenuButton;
+    CCMenuItem *mainMenuButton;
     
     // target to call when the main menu button is pressed
     id target;
@@ -68,12 +67,14 @@
     [self addChild:colorLayer z:0];
     
     // add main menu button
-    CCScale9Sprite *btnBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:@"mainMenu.png"];
-    mainMenuButton = [CCControlButton buttonWithBackgroundSprite:btnBackgroundSprite];
-    mainMenuButton.position = ccp(self.contentSize.width - mainMenuButton.contentSize.width, self.contentSize.height - mainMenuButton.contentSize.height);
-    [self addChild:mainMenuButton];
+    CCSprite *mainMenuSprite = [CCSprite spriteWithFile:@"mainMenu.png"];
+    mainMenuButton = [CCMenuItemSprite itemWithNormalSprite:mainMenuSprite selectedSprite:nil target:target selector:selector];
+  //  mainMenuButton.position = ccp(self.contentSize.width - mainMenuSprite.size.width, self.contentSize.height - mainMenuSprite.size.height);
+    CCMenu *menu = [CCMenu menuWithItems:mainMenuButton, nil];
+    menu.position = ccp(self.contentSize.width - 0.5 * mainMenuSprite.contentSize.width, self.contentSize.height - 0.5 * mainMenuSprite.contentSize.height);
+    [self addChild:menu];
     
-    // addd leaderboard heading
+    // add leaderboard heading
     leaderboardHeader = [CCSprite spriteWithFile:@"leaderboard.png"];
     leaderboardHeader.position = ccp(self.contentSize.width / 2, self.contentSize.height - (0.5 * leaderboardHeader.contentSize.height));
     [self addChild:leaderboardHeader];
