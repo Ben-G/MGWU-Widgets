@@ -12,7 +12,7 @@
 
 @interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate>
 
-- (void)presentOnNode:(CCNode *)parentNode;
+- (void)presentOnNode:(CCNode *)parentNode position:(CGPoint)pos;
 - (void)dismiss;
 - (NSString *)textFieldText;
 

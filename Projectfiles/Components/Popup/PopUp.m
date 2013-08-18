@@ -12,12 +12,12 @@
 
 @implementation PopUp
 
-- (void)presentOnNode:(CCNode *)parentNode
+- (void)presentOnNode:(CCNode *)parentNode position:(CGPoint)pos
 {
     // add to the most front layer
     [parentNode addChild:self z:MAX_INT];
     self.anchorPoint = ccp(0.5, 0.5);
-    self.position = ccp(parentNode.contentSize.width / 2, parentNode.contentSize.height / 2);
+    self.position = pos;
 }
 
 - (NSString *)textFieldText

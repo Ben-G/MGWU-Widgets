@@ -18,6 +18,12 @@
 /* Popup with input field. Value of inputField can be accessed over 'textFieldText' property of the popup */
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField;
 
+/* Popup with input field and custom size */
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField;
+
+/* Popup with input field, custom size and custom position */
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField;
+
 /*
  PopUp with custom image and custom size
  */

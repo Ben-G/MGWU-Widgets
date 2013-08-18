@@ -19,12 +19,22 @@
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
-    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+}
+
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField {
+    
+    return [self presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+}
+
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField {
+
+    return [self presentPopUpWithContentString:contentString contentSize:contentSize atPosition:position backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
@@ -34,17 +44,27 @@
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+    return [self presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
     // create a popup with a content size
     PopUp *popUp = [PopUp node];
     popUp.contentSize = contentSize;
     popUp.backgroundScaleSprite = backgroundImage;
     
-    int y = ([[CCDirector sharedDirector] runningScene].contentSize.height / 2) + (popUp.contentSize.height / 2);
+    CCNode *parentNode = [[CCDirector sharedDirector] runningScene];
+    CGPoint presentationPosition;
+    if (!CGPointEqualToPoint(CGPointZero, position))
+    {
+        presentationPosition = position;
+    } else
+    {
+        presentationPosition = ccp((parentNode.contentSize.width / 2), (parentNode.contentSize.height / 2));
+    }
+    
+    int y = presentationPosition.y + (popUp.contentSize.height / 2);
     
     if (contentString)
     {
@@ -64,7 +84,7 @@
         // add input field
         UIView *view = [[CCDirector sharedDirector] view];
         int textFieldWidth = (int) (0.8 * popUp.contentSize.width);
-        int posX = ([[CCDirector sharedDirector] runningScene].contentSize.width / 2) - (textFieldWidth / 2);
+        int posX = presentationPosition.x - (textFieldWidth / 2);
         CGPoint position = ccp(posX, y);
         position = [[CCDirector sharedDirector] convertToUI:position];
         
@@ -109,7 +129,7 @@
     }
         
     // present the popup on the running scene
-    [popUp presentOnNode:[[CCDirector sharedDirector] runningScene]];
+    [popUp presentOnNode:[[CCDirector sharedDirector] runningScene] position:presentationPosition];
     
     return popUp;
 
