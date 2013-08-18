@@ -12,6 +12,7 @@
 #import "LeaderboardDemoLayer.h"
 #import "ScoreboardDemoLayer.h"
 #import "CCMenuBlockingDemoLayer.h"
+#import "PopupDemoLayer.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -36,7 +37,10 @@
         CCLabelTTF *menuBlockingLabel = [CCLabelTTF labelWithString:@"CCMenuBlocking" fontName:@"Arial" fontSize:14];
         CCMenuItem *menuBlockingItem = [CCMenuItemLabel itemWithLabel:menuBlockingLabel target:self selector:@selector(presentMenuBlocking)];
         
-        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, nil];
+        CCLabelTTF *popupLabel = [CCLabelTTF labelWithString:@"Popup" fontName:@"Arial" fontSize:14];
+        CCMenuItem *popupItem = [CCMenuItemLabel itemWithLabel:popupLabel target:self selector:@selector(presentPopup)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, nil];
         [menu alignItemsVertically];
         
         [self addChild:menu];
@@ -58,6 +62,11 @@
 - (void)presentMenuBlocking
 {
     [[CCDirector sharedDirector] pushScene:(CCScene *)[[CCMenuBlockingDemoLayer alloc] init]];
+}
+
+- (void)presentPopup
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[PopupDemoLayer alloc] init]];
 }
 
 @end

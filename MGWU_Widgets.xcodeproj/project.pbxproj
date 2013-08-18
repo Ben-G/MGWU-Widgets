@@ -122,6 +122,13 @@
 		62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */; };
 		62753C2417C0FE2F005F379C /* CCMenuBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C2317C0FE2F005F379C /* CCMenuBlocking.m */; };
 		62753C2717C0FE53005F379C /* CCMenuBlockingDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */; };
+		62753C2D17C1050E005F379C /* PopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C2A17C1050E005F379C /* PopUp.m */; };
+		62753C2E17C1050E005F379C /* PopupProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C2C17C1050E005F379C /* PopupProvider.m */; };
+		62753C3117C10595005F379C /* PopupDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C3017C10594005F379C /* PopupDemoLayer.m */; };
+		62753C3517C10752005F379C /* CCNinePatchBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C3417C10752005F379C /* CCNinePatchBackgroundNode.m */; };
+		62753C3817C107EC005F379C /* CCLayerSwallowsTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C3717C107EC005F379C /* CCLayerSwallowsTouches.m */; };
+		62753C3C17C1099C005F379C /* 9patch_whiteBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */; };
+		62753C3D17C1099C005F379C /* 9patch_whiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -326,6 +333,18 @@
 		62753C2317C0FE2F005F379C /* CCMenuBlocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuBlocking.m; sourceTree = "<group>"; };
 		62753C2517C0FE52005F379C /* CCMenuBlockingDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuBlockingDemoLayer.h; sourceTree = "<group>"; };
 		62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuBlockingDemoLayer.m; sourceTree = "<group>"; };
+		62753C2917C1050E005F379C /* PopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUp.h; sourceTree = "<group>"; };
+		62753C2A17C1050E005F379C /* PopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUp.m; sourceTree = "<group>"; };
+		62753C2B17C1050E005F379C /* PopupProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupProvider.h; sourceTree = "<group>"; };
+		62753C2C17C1050E005F379C /* PopupProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupProvider.m; sourceTree = "<group>"; };
+		62753C2F17C10594005F379C /* PopupDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupDemoLayer.h; sourceTree = "<group>"; };
+		62753C3017C10594005F379C /* PopupDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupDemoLayer.m; sourceTree = "<group>"; };
+		62753C3317C10752005F379C /* CCNinePatchBackgroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNinePatchBackgroundNode.h; sourceTree = "<group>"; };
+		62753C3417C10752005F379C /* CCNinePatchBackgroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNinePatchBackgroundNode.m; sourceTree = "<group>"; };
+		62753C3617C107EC005F379C /* CCLayerSwallowsTouches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLayerSwallowsTouches.h; sourceTree = "<group>"; };
+		62753C3717C107EC005F379C /* CCLayerSwallowsTouches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerSwallowsTouches.m; sourceTree = "<group>"; };
+		62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9patch_whiteBackground-hd.png"; sourceTree = "<group>"; };
+		62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9patch_whiteBackground.png; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -534,6 +553,7 @@
 		623C478117B67ED5007A9679 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				62753C2817C1050E005F379C /* Popup */,
 				62753C2117C0FE2F005F379C /* CCMenuBlocking */,
 				623C478217B67ED5007A9679 /* Leaderboard */,
 				623C478517B67ED5007A9679 /* ScoreBoardEntry */,
@@ -543,6 +563,8 @@
 				62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */,
 				62753C2517C0FE52005F379C /* CCMenuBlockingDemoLayer.h */,
 				62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */,
+				62753C2F17C10594005F379C /* PopupDemoLayer.h */,
+				62753C3017C10594005F379C /* PopupDemoLayer.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -586,6 +608,7 @@
 		62753BDC17C0D096005F379C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				62753C3217C10752005F379C /* MGWU */,
 				62753BDD17C0D096005F379C /* CCControlExtension */,
 				62753BFC17C0D096005F379C /* SWTable */,
 			);
@@ -674,6 +697,38 @@
 				62753C2317C0FE2F005F379C /* CCMenuBlocking.m */,
 			);
 			path = CCMenuBlocking;
+			sourceTree = "<group>";
+		};
+		62753C2817C1050E005F379C /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				62753C3917C1099C005F379C /* Resources */,
+				62753C2917C1050E005F379C /* PopUp.h */,
+				62753C2A17C1050E005F379C /* PopUp.m */,
+				62753C2B17C1050E005F379C /* PopupProvider.h */,
+				62753C2C17C1050E005F379C /* PopupProvider.m */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		62753C3217C10752005F379C /* MGWU */ = {
+			isa = PBXGroup;
+			children = (
+				62753C3617C107EC005F379C /* CCLayerSwallowsTouches.h */,
+				62753C3717C107EC005F379C /* CCLayerSwallowsTouches.m */,
+				62753C3317C10752005F379C /* CCNinePatchBackgroundNode.h */,
+				62753C3417C10752005F379C /* CCNinePatchBackgroundNode.m */,
+			);
+			path = MGWU;
+			sourceTree = "<group>";
+		};
+		62753C3917C1099C005F379C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */,
+				62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DC1BE68414F417CC00F49D25 /* ubuntu-font-family-0.80 */ = {
@@ -1023,6 +1078,8 @@
 				62753BDA17C0CF02005F379C /* mainMenu.png in Resources */,
 				62753BDB17C0CF02005F379C /* mainMenu-hd.png in Resources */,
 				62753C1317C0D096005F379C /* README.md in Resources */,
+				62753C3C17C1099C005F379C /* 9patch_whiteBackground-hd.png in Resources */,
+				62753C3D17C1099C005F379C /* 9patch_whiteBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1074,6 +1131,11 @@
 				62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */,
 				62753C2417C0FE2F005F379C /* CCMenuBlocking.m in Sources */,
 				62753C2717C0FE53005F379C /* CCMenuBlockingDemoLayer.m in Sources */,
+				62753C2D17C1050E005F379C /* PopUp.m in Sources */,
+				62753C2E17C1050E005F379C /* PopupProvider.m in Sources */,
+				62753C3117C10595005F379C /* PopupDemoLayer.m in Sources */,
+				62753C3517C10752005F379C /* CCNinePatchBackgroundNode.m in Sources */,
+				62753C3817C107EC005F379C /* CCLayerSwallowsTouches.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

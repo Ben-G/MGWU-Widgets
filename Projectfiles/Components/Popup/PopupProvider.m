@@ -8,14 +8,16 @@
 //
 
 #import "PopupProvider.h"
-#import "StyleManager.h"
-#import "STYLES.h"
+#import "CCControlButton.h"
+
+#define DEFAULT_FONT_COLOR ccc3(0, 0, 0)
+#define DEFAULT_FONT @"Avenir-Black"
 
 @implementation PopupProvider
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[StyleManager scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles];
+    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
@@ -55,7 +57,7 @@
     for (unsigned int i = 0; i < [buttonTitles count]; i++)
     {
         // add a login button for the user
-        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:[StyleManager scaleSpriteWhiteBackgroundSolidBlackBorder]];
+        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder]];
         [popUpButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
         [popUpButton setTitleTTFSize:16 forState:CCControlStateNormal];
         [popUpButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];
@@ -78,6 +80,13 @@
     
     return popUp;
 
+}
+
+#pragma mark - Helpers
+
++ (CCScale9Sprite *)scaleSpriteWhiteBackgroundSolidBlackBorder
+{
+    return  [[CCScale9Sprite alloc] initWithFile:@"9patch_whiteBackground.png" capInsets:CGRectMake(10, 10, 40, 40)];
 }
 
 @end

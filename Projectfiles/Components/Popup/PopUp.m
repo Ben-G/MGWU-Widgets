@@ -8,7 +8,6 @@
 //
 
 #import "PopUp.h"
-#import "CCBackgroundColorNode.h"
 
 @implementation PopUp
 
