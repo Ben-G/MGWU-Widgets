@@ -19,32 +19,32 @@
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
-    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField {
     
-    return [self presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField {
 
-    return [self presentPopUpWithContentString:contentString contentSize:contentSize atPosition:position backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:position backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:backgroundImage.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:backgroundImage.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
