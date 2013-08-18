@@ -11,6 +11,7 @@
 #import "LeaderboardLayer.h"
 #import "LeaderboardDemoLayer.h"
 #import "ScoreboardDemoLayer.h"
+#import "CCMenuBlockingDemoLayer.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -32,7 +33,10 @@
         CCLabelTTF *scoreBoardLabel = [CCLabelTTF labelWithString:@"Scoreboard" fontName:@"Arial" fontSize:14];
         CCMenuItem *scoreBoardItem = [CCMenuItemLabel itemWithLabel:scoreBoardLabel target:self selector:@selector(presentScoreboard)];
         
-        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, nil];
+        CCLabelTTF *menuBlockingLabel = [CCLabelTTF labelWithString:@"CCMenuBlocking" fontName:@"Arial" fontSize:14];
+        CCMenuItem *menuBlockingItem = [CCMenuItemLabel itemWithLabel:menuBlockingLabel target:self selector:@selector(presentMenuBlocking)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, nil];
         [menu alignItemsVertically];
         
         [self addChild:menu];
@@ -50,4 +54,10 @@
 {
     [[CCDirector sharedDirector] pushScene:(CCScene *)[[ScoreboardDemoLayer alloc] init]];
 }
+
+- (void)presentMenuBlocking
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[CCMenuBlockingDemoLayer alloc] init]];
+}
+
 @end

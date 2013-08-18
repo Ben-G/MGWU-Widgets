@@ -112,7 +112,6 @@
 		62753C1117C0D096005F379C /* CCColourUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BF417C0D096005F379C /* CCColourUtils.m */; };
 		62753C1217C0D096005F379C /* CCScale9Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BF617C0D096005F379C /* CCScale9Sprite.m */; };
 		62753C1317C0D096005F379C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 62753BF817C0D096005F379C /* README.md */; };
-		62753C1417C0D096005F379C /* CCMenuBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BFB17C0D096005F379C /* CCMenuBlocking.m */; };
 		62753C1517C0D096005F379C /* CCNode+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BFE17C0D096005F379C /* CCNode+Autolayout.m */; };
 		62753C1617C0D096005F379C /* SWMultiColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0017C0D096005F379C /* SWMultiColumnTableView.m */; };
 		62753C1717C0D096005F379C /* SWScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0217C0D096005F379C /* SWScrollView.m */; };
@@ -121,6 +120,8 @@
 		62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0817C0D096005F379C /* SWTableViewCell.m */; };
 		62753C1D17C0DD18005F379C /* LeaderboardDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C1C17C0DD18005F379C /* LeaderboardDemoLayer.m */; };
 		62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */; };
+		62753C2417C0FE2F005F379C /* CCMenuBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C2317C0FE2F005F379C /* CCMenuBlocking.m */; };
+		62753C2717C0FE53005F379C /* CCMenuBlockingDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -305,8 +306,6 @@
 		62753BF617C0D096005F379C /* CCScale9Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9Sprite.m; sourceTree = "<group>"; };
 		62753BF717C0D096005F379C /* CCControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlExtension.h; sourceTree = "<group>"; };
 		62753BF817C0D096005F379C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		62753BFA17C0D096005F379C /* CCMenuBlocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuBlocking.h; sourceTree = "<group>"; };
-		62753BFB17C0D096005F379C /* CCMenuBlocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuBlocking.m; sourceTree = "<group>"; };
 		62753BFD17C0D096005F379C /* CCNode+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Autolayout.h"; sourceTree = "<group>"; };
 		62753BFE17C0D096005F379C /* CCNode+Autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Autolayout.m"; sourceTree = "<group>"; };
 		62753BFF17C0D096005F379C /* SWMultiColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMultiColumnTableView.h; sourceTree = "<group>"; };
@@ -323,6 +322,10 @@
 		62753C1C17C0DD18005F379C /* LeaderboardDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardDemoLayer.m; sourceTree = "<group>"; };
 		62753C1E17C0DD2D005F379C /* ScoreboardDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardDemoLayer.h; sourceTree = "<group>"; };
 		62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardDemoLayer.m; sourceTree = "<group>"; };
+		62753C2217C0FE2F005F379C /* CCMenuBlocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuBlocking.h; sourceTree = "<group>"; };
+		62753C2317C0FE2F005F379C /* CCMenuBlocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuBlocking.m; sourceTree = "<group>"; };
+		62753C2517C0FE52005F379C /* CCMenuBlockingDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuBlockingDemoLayer.h; sourceTree = "<group>"; };
+		62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuBlockingDemoLayer.m; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -531,12 +534,15 @@
 		623C478117B67ED5007A9679 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				62753C2117C0FE2F005F379C /* CCMenuBlocking */,
 				623C478217B67ED5007A9679 /* Leaderboard */,
 				623C478517B67ED5007A9679 /* ScoreBoardEntry */,
 				62753C1B17C0DD18005F379C /* LeaderboardDemoLayer.h */,
 				62753C1C17C0DD18005F379C /* LeaderboardDemoLayer.m */,
 				62753C1E17C0DD2D005F379C /* ScoreboardDemoLayer.h */,
 				62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */,
+				62753C2517C0FE52005F379C /* CCMenuBlockingDemoLayer.h */,
+				62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -581,7 +587,6 @@
 			isa = PBXGroup;
 			children = (
 				62753BDD17C0D096005F379C /* CCControlExtension */,
-				62753BF917C0D096005F379C /* CCMenu */,
 				62753BFC17C0D096005F379C /* SWTable */,
 			);
 			name = Extensions;
@@ -643,15 +648,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		62753BF917C0D096005F379C /* CCMenu */ = {
-			isa = PBXGroup;
-			children = (
-				62753BFA17C0D096005F379C /* CCMenuBlocking.h */,
-				62753BFB17C0D096005F379C /* CCMenuBlocking.m */,
-			);
-			path = CCMenu;
-			sourceTree = "<group>";
-		};
 		62753BFC17C0D096005F379C /* SWTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -669,6 +665,15 @@
 				62753C0817C0D096005F379C /* SWTableViewCell.m */,
 			);
 			path = SWTable;
+			sourceTree = "<group>";
+		};
+		62753C2117C0FE2F005F379C /* CCMenuBlocking */ = {
+			isa = PBXGroup;
+			children = (
+				62753C2217C0FE2F005F379C /* CCMenuBlocking.h */,
+				62753C2317C0FE2F005F379C /* CCMenuBlocking.m */,
+			);
+			path = CCMenuBlocking;
 			sourceTree = "<group>";
 		};
 		DC1BE68414F417CC00F49D25 /* ubuntu-font-family-0.80 */ = {
@@ -1059,7 +1064,6 @@
 				62753C1017C0D096005F379C /* ccControlShaders.m in Sources */,
 				62753C1117C0D096005F379C /* CCColourUtils.m in Sources */,
 				62753C1217C0D096005F379C /* CCScale9Sprite.m in Sources */,
-				62753C1417C0D096005F379C /* CCMenuBlocking.m in Sources */,
 				62753C1517C0D096005F379C /* CCNode+Autolayout.m in Sources */,
 				62753C1617C0D096005F379C /* SWMultiColumnTableView.m in Sources */,
 				62753C1717C0D096005F379C /* SWScrollView.m in Sources */,
@@ -1068,6 +1072,8 @@
 				62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */,
 				62753C1D17C0DD18005F379C /* LeaderboardDemoLayer.m in Sources */,
 				62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */,
+				62753C2417C0FE2F005F379C /* CCMenuBlocking.m in Sources */,
+				62753C2717C0FE53005F379C /* CCMenuBlockingDemoLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,6 @@
                 
         CCLabelTTF *backLabel = [CCLabelTTF labelWithString:@"Back" fontName:@"Arial" fontSize:14];
         CCMenuItemLabel *backItem = [CCMenuItemLabel itemWithLabel:backLabel target:self selector:@selector(back)];
-        
         CCMenu *menu = [CCMenu menuWithItems:backItem, nil];
         [menu alignItemsVertically];
         
