@@ -9,11 +9,11 @@
 #ifndef MGWU_Widgets_PopUpProtected_h
 #define MGWU_Widgets_PopUpProtected_h
 
-@interface PopUp() {
+@interface PopUp() <UITextFieldDelegate> {
 
 }
 
-@property (nonatomic, assign) UITextField *textField;
+@property (nonatomic, strong) UITextField *textField;
 
 @end
 

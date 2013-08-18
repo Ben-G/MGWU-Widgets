@@ -15,6 +15,9 @@
 /* analogous to UIAlertViewDelegate, this popup will call the selector on the target. The CCControllButton which is seleced, is passed to the selector as the "sender". The tag of that CCControlButton matches the index of the button title*/
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
 
+/* Popup with input field. Value of inputField can be accessed over 'textFieldText' property of the popup */
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField;
+
 /*
  PopUp with custom image and custom size
  */

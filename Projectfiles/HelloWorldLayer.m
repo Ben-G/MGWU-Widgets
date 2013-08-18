@@ -13,6 +13,7 @@
 #import "ScoreboardDemoLayer.h"
 #import "CCMenuBlockingDemoLayer.h"
 #import "PopupDemoLayer.h"
+#import "PopupInputDemoLayer.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -40,7 +41,10 @@
         CCLabelTTF *popupLabel = [CCLabelTTF labelWithString:@"Popup" fontName:@"Arial" fontSize:14];
         CCMenuItem *popupItem = [CCMenuItemLabel itemWithLabel:popupLabel target:self selector:@selector(presentPopup)];
         
-        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, nil];
+        CCLabelTTF *inputPopupLabel = [CCLabelTTF labelWithString:@"Input Popup" fontName:@"Arial" fontSize:14];
+        CCMenuItem *inputPopupItem = [CCMenuItemLabel itemWithLabel:inputPopupLabel target:self selector:@selector(presentInputPopup)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, nil];
         [menu alignItemsVertically];
         
         [self addChild:menu];
@@ -67,6 +71,11 @@
 - (void)presentPopup
 {
     [[CCDirector sharedDirector] pushScene:(CCScene *)[[PopupDemoLayer alloc] init]];
+}
+
+- (void)presentInputPopup
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[PopupInputDemoLayer alloc] init]];
 }
 
 @end

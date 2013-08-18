@@ -129,6 +129,7 @@
 		62753C3817C107EC005F379C /* CCLayerSwallowsTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C3717C107EC005F379C /* CCLayerSwallowsTouches.m */; };
 		62753C3C17C1099C005F379C /* 9patch_whiteBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */; };
 		62753C3D17C1099C005F379C /* 9patch_whiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */; };
+		62753C4717C1211C005F379C /* PopupInputDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C4617C1211B005F379C /* PopupInputDemoLayer.m */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -346,6 +347,8 @@
 		62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9patch_whiteBackground-hd.png"; sourceTree = "<group>"; };
 		62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9patch_whiteBackground.png; sourceTree = "<group>"; };
 		62753C4417C119C6005F379C /* PopUpProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpProtected.h; sourceTree = "<group>"; };
+		62753C4517C1211A005F379C /* PopupInputDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupInputDemoLayer.h; sourceTree = "<group>"; };
+		62753C4617C1211B005F379C /* PopupInputDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupInputDemoLayer.m; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -566,6 +569,8 @@
 				62753C2617C0FE53005F379C /* CCMenuBlockingDemoLayer.m */,
 				62753C2F17C10594005F379C /* PopupDemoLayer.h */,
 				62753C3017C10594005F379C /* PopupDemoLayer.m */,
+				62753C4517C1211A005F379C /* PopupInputDemoLayer.h */,
+				62753C4617C1211B005F379C /* PopupInputDemoLayer.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1138,6 +1143,7 @@
 				62753C3117C10595005F379C /* PopupDemoLayer.m in Sources */,
 				62753C3517C10752005F379C /* CCNinePatchBackgroundNode.m in Sources */,
 				62753C3817C107EC005F379C /* CCLayerSwallowsTouches.m in Sources */,
+				62753C4717C1211C005F379C /* PopupInputDemoLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

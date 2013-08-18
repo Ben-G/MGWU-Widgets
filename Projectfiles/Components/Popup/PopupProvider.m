@@ -19,7 +19,12 @@
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles];
+    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+}
+
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
+{
+    return [self presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
@@ -28,6 +33,11 @@
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
+{
+    return [self presentPopUpWithContentString:contentString contentSize:contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+}
+
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
     // create a popup with a content size
     PopUp *popUp = [PopUp node];
@@ -49,21 +59,24 @@
         y -= (60 + popUpContentLabel.size.height);
     }
     
-    // add input field
-    UIView *view = [[CCDirector sharedDirector] view];
-    int textFieldWidth = (int) (0.8 * popUp.contentSize.width);
-    int posX = ([[CCDirector sharedDirector] runningScene].contentSize.width / 2) - (textFieldWidth / 2);
-    CGPoint pos1 = ccp(posX, y);
-    pos1 = [[CCDirector sharedDirector] convertToUI:pos1];
-    
-    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(pos1.x, pos1.y, textFieldWidth, 25)];
-    textField.backgroundColor = [UIColor whiteColor];
-    textField.borderStyle     = UITextBorderStyleRoundedRect;
-    textField.returnKeyType   = UIReturnKeyDone;
-    textField.delegate        = popUp;
-    
-    [view addSubview:textField];
-    popUp.textField = textField;
+    if (showsInputField)
+    {
+        // add input field
+        UIView *view = [[CCDirector sharedDirector] view];
+        int textFieldWidth = (int) (0.8 * popUp.contentSize.width);
+        int posX = ([[CCDirector sharedDirector] runningScene].contentSize.width / 2) - (textFieldWidth / 2);
+        CGPoint position = ccp(posX, y);
+        position = [[CCDirector sharedDirector] convertToUI:position];
+        
+        UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(position.x, position.y, textFieldWidth, 25)];
+        textField.backgroundColor = [UIColor whiteColor];
+        textField.borderStyle     = UITextBorderStyleRoundedRect;
+        textField.returnKeyType   = UIReturnKeyDone;
+        textField.delegate        = popUp;
+        
+        [view addSubview:textField];
+        popUp.textField = textField;
+    }
     
     // add the different buttons, automatically determine the size of the button by dividing the available space through the amount of buttons
     // left and right margins for the button(s)

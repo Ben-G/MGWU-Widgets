@@ -10,7 +10,7 @@
 #import "CCNode.h"
 #import "CCNinePatchBackgroundNode.h"
 
-@interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate, UITextFieldDelegate>
+@interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate>
 
 - (void)presentOnNode:(CCNode *)parentNode;
 - (void)dismiss;
