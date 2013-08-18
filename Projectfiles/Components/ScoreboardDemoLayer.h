@@ -7,6 +7,7 @@
 //
 
 #import "CCLayer.h"
+#import "ScoreboardEntryNode.h"
 
 @interface ScoreboardDemoLayer : CCLayer
 

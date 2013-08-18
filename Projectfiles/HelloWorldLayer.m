@@ -10,6 +10,7 @@
 #import "ScoreboardEntryNode.h"
 #import "LeaderboardLayer.h"
 #import "LeaderboardDemoLayer.h"
+#import "ScoreboardDemoLayer.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -23,20 +24,30 @@
 {
 	if ((self = [super init]))
 	{
-        ScoreboardEntryNode *scoreBoard = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
-        [self addChild:scoreBoard];
-        scoreBoard.position = ccp(8, self.contentSize.height - 20);
-        
-        
 		glClearColor(0.2f, 0.2f, 0.4f, 1.0f);
+        
+        CCLabelTTF *leaderboardLabel = [CCLabelTTF labelWithString:@"Leaderboard" fontName:@"Arial" fontSize:14];
+        CCMenuItem *leaderboardItem = [CCMenuItemLabel itemWithLabel:leaderboardLabel target:self selector:@selector(presentLeaderboard)];
+        
+        CCLabelTTF *scoreBoardLabel = [CCLabelTTF labelWithString:@"Scoreboard" fontName:@"Arial" fontSize:14];
+        CCMenuItem *scoreBoardItem = [CCMenuItemLabel itemWithLabel:scoreBoardLabel target:self selector:@selector(presentScoreboard)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, nil];
+        [menu alignItemsVertically];
+        
+        [self addChild:menu];
 	}
 
 	return self;
 }
 
-- (void)onEnterTransitionDidFinish {
-    [super onEnterTransitionDidFinish];
-    
-    [[CCDirector sharedDirector] replaceScene:(CCScene *)[[LeaderboardDemoLayer alloc] init]];
+- (void)presentLeaderboard
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[LeaderboardDemoLayer alloc] init]];
+}
+
+- (void)presentScoreboard
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[ScoreboardDemoLayer alloc] init]];
 }
 @end

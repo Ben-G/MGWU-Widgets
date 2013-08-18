@@ -66,14 +66,6 @@
     colorLayer.anchorPoint = ccp(0,0);
     [self addChild:colorLayer z:0];
     
-    // add main menu button
-    CCSprite *mainMenuSprite = [CCSprite spriteWithFile:@"mainMenu.png"];
-    mainMenuButton = [CCMenuItemSprite itemWithNormalSprite:mainMenuSprite selectedSprite:nil target:target selector:selector];
-  //  mainMenuButton.position = ccp(self.contentSize.width - mainMenuSprite.size.width, self.contentSize.height - mainMenuSprite.size.height);
-    CCMenu *menu = [CCMenu menuWithItems:mainMenuButton, nil];
-    menu.position = ccp(self.contentSize.width - 0.5 * mainMenuSprite.contentSize.width, self.contentSize.height - 0.5 * mainMenuSprite.contentSize.height);
-    [self addChild:menu];
-    
     // add leaderboard heading
     leaderboardHeader = [CCSprite spriteWithFile:@"leaderboard.png"];
     leaderboardHeader.position = ccp(self.contentSize.width / 2, self.contentSize.height - (0.5 * leaderboardHeader.contentSize.height));
@@ -106,6 +98,23 @@
         [scoreBoardLabels addObject:entryLabel];
     }
     
+    
+    // add main menu button
+    CCSprite *mainMenuSprite = [CCSprite spriteWithFile:@"mainMenu.png"];
+    mainMenuButton = [CCMenuItemSprite itemWithNormalSprite:mainMenuSprite selectedSprite:nil target:target selector:selector];
+    CCMenu *menu = [CCMenu menuWithItems:mainMenuButton, nil];
+    
+    // calculate if header and main Menu button fit next to each other in the first line
+    int availableWidth = (self.contentSize.width / 2) - (leaderboardHeader.contentSize.width / 2) - mainMenuSprite.contentSize.width;
+    
+    if (availableWidth < 0) {
+        // if they fit, place them in the first line
+        menu.position = ccp(self.contentSize.width / 2, 0.5 * mainMenuSprite.contentSize.height);
+    } else {
+        // if they don't fit, place the button at the bottom of the screen
+        menu.position = ccp(self.contentSize.width - 0.5 * mainMenuSprite.contentSize.width, self.contentSize.height - 0.5 * mainMenuSprite.contentSize.height);
+    }
+    [self addChild:menu];
 }
 
 - (void)scoresLoaded:(NSDictionary *)scores

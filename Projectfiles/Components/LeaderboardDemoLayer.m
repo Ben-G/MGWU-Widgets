@@ -9,9 +9,7 @@
 #import "LeaderboardDemoLayer.h"
 #import "LeaderboardLayer.h"
 
-@implementation LeaderboardDemoLayer {
-    CCMenuItem *presentLeaderboardItem;
-}
+@implementation LeaderboardDemoLayer
 
 - (id)init
 {
@@ -20,23 +18,38 @@
     if (self)
     {
         CCLabelTTF *presentLeaderboardLabel = [CCLabelTTF labelWithString:@"Show leaderboard" fontName:@"Arial" fontSize:14];
-        presentLeaderboardItem = [CCMenuItemLabel itemWithLabel:presentLeaderboardLabel target:self selector:@selector(presentLeaderboard)];
-        CCMenu *menu = [CCMenu menuWithItems:presentLeaderboardItem, nil];
+        CCMenuItemLabel *presentLeaderboardItem = [CCMenuItemLabel itemWithLabel:presentLeaderboardLabel target:self selector:@selector(presentLeaderboard)];
+        
+        CCLabelTTF *backLabel = [CCLabelTTF labelWithString:@"Back" fontName:@"Arial" fontSize:14];
+        CCMenuItemLabel *backItem = [CCMenuItemLabel itemWithLabel:backLabel target:self selector:@selector(back)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:presentLeaderboardItem, backItem, nil];
+        [menu alignItemsVertically];
+        
         [self addChild:menu];
     }
     
     return self;
 }
 
+// This method creates and presents the leaderboard
 - (void)presentLeaderboard
 {
     LeaderboardLayer *leaderboard = [[LeaderboardLayer alloc] initWithTarget:self selector:@selector(buttonPressed)];
-    [[CCDirector sharedDirector] replaceScene:leaderboard];
+    [[CCDirector sharedDirector] pushScene:leaderboard];
 }
 
-- (void)buttonPressed {
-    [[CCDirector sharedDirector] replaceScene:(CCScene*)self];
-    [presentLeaderboardItem setTarget:self selector:@selector(presentLeaderboard)];
+// This method reacts to the callback of the leaderboard and pops the leaderboard from the scene stack
+- (void)buttonPressed
+{
+    [[CCDirector sharedDirector] popScene];
 }
+
+// returns to the main screen
+- (void)back
+{
+    [[CCDirector sharedDirector] popScene];
+}
+
 
 @end
