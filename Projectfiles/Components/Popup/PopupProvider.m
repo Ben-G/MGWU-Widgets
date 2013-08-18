@@ -9,8 +9,10 @@
 
 #import "PopupProvider.h"
 #import "CCControlButton.h"
+#import "PopUpProtected.h"
 
 #define DEFAULT_FONT_COLOR ccc3(0, 0, 0)
+#define WHITE_FONT_COLOR ccc3(255, 255, 255)
 #define DEFAULT_FONT @"Avenir-Black"
 
 @implementation PopupProvider
@@ -25,13 +27,14 @@
     return [self presentPopUpWithContentString:contentString contentSize:backgroundImage.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
 }
 
-
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
     // create a popup with a content size
     PopUp *popUp = [PopUp node];
     popUp.contentSize = contentSize;
     popUp.backgroundScaleSprite = backgroundImage;
+    
+    int y = ([[CCDirector sharedDirector] runningScene].contentSize.height / 2) + (popUp.contentSize.height / 2);
     
     if (contentString)
     {
@@ -43,7 +46,24 @@
         popUpContentLabel.anchorPoint = ccp(0.5, 0);
         popUpContentLabel.position = ccp(popUp.contentSize.width / 2, popUp.contentSize.height - 60);
         [popUp addChild:popUpContentLabel];
+        y -= (60 + popUpContentLabel.size.height);
     }
+    
+    // add input field
+    UIView *view = [[CCDirector sharedDirector] view];
+    int textFieldWidth = (int) (0.8 * popUp.contentSize.width);
+    int posX = ([[CCDirector sharedDirector] runningScene].contentSize.width / 2) - (textFieldWidth / 2);
+    CGPoint pos1 = ccp(posX, y);
+    pos1 = [[CCDirector sharedDirector] convertToUI:pos1];
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(pos1.x, pos1.y, textFieldWidth, 25)];
+    textField.backgroundColor = [UIColor whiteColor];
+    textField.borderStyle     = UITextBorderStyleRoundedRect;
+    textField.returnKeyType   = UIReturnKeyDone;
+    textField.delegate        = popUp;
+    
+    [view addSubview:textField];
+    popUp.textField = textField;
     
     // add the different buttons, automatically determine the size of the button by dividing the available space through the amount of buttons
     // left and right margins for the button(s)

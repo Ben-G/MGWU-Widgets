@@ -8,15 +8,12 @@
 //
 
 #import "CCNode.h"
-#import "CCLayerSwallowsTouches.h"
 #import "CCNinePatchBackgroundNode.h"
 
-@interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate>
-{
-    CCLayerSwallowsTouches *layer;
-}
+@interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate, UITextFieldDelegate>
 
 - (void)presentOnNode:(CCNode *)parentNode;
 - (void)dismiss;
+- (NSString *)textFieldText;
 
 @end

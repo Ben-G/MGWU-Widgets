@@ -345,6 +345,7 @@
 		62753C3717C107EC005F379C /* CCLayerSwallowsTouches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLayerSwallowsTouches.m; sourceTree = "<group>"; };
 		62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9patch_whiteBackground-hd.png"; sourceTree = "<group>"; };
 		62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9patch_whiteBackground.png; sourceTree = "<group>"; };
+		62753C4417C119C6005F379C /* PopUpProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpProtected.h; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -707,6 +708,7 @@
 				62753C2A17C1050E005F379C /* PopUp.m */,
 				62753C2B17C1050E005F379C /* PopupProvider.h */,
 				62753C2C17C1050E005F379C /* PopupProvider.m */,
+				62753C4417C119C6005F379C /* PopUpProtected.h */,
 			);
 			path = Popup;
 			sourceTree = "<group>";

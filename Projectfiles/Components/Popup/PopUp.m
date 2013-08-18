@@ -8,6 +8,7 @@
 //
 
 #import "PopUp.h"
+#import "PopUpProtected.h"
 
 @implementation PopUp
 
@@ -19,9 +20,29 @@
     self.position = ccp(parentNode.contentSize.width / 2, parentNode.contentSize.height / 2);
 }
 
+- (NSString *)textFieldText
+{
+    return self.textField.text;
+}
+
 - (void)dismiss
 {
+    [self.textField removeFromSuperview];
     [self removeFromParent];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return TRUE;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return TRUE;
 }
 
 #pragma mark - Touch Swallowing
