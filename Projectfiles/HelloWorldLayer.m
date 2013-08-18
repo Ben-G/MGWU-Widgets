@@ -9,6 +9,7 @@
 #import "SimpleAudioEngine.h"
 #import "ScoreboardEntryNode.h"
 #import "LeaderboardLayer.h"
+#import "LeaderboardDemoLayer.h"
 
 @interface HelloWorldLayer (PrivateMethods)
 @end
@@ -36,11 +37,6 @@
 - (void)onEnterTransitionDidFinish {
     [super onEnterTransitionDidFinish];
     
-    LeaderboardLayer *leaderboard = [[LeaderboardLayer alloc] initWithTarget:self selector:@selector(buttonPressed)];
-    [[CCDirector sharedDirector] replaceScene:leaderboard];
-}
-
-- (void)buttonPressed {
-    [[CCDirector sharedDirector] replaceScene:(CCScene*)self];
+    [[CCDirector sharedDirector] replaceScene:(CCScene *)[[LeaderboardDemoLayer alloc] init]];
 }
 @end

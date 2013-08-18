@@ -119,6 +119,8 @@
 		62753C1817C0D096005F379C /* SWSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0417C0D096005F379C /* SWSorting.m */; };
 		62753C1917C0D096005F379C /* SWTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0617C0D096005F379C /* SWTableView.m */; };
 		62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0817C0D096005F379C /* SWTableViewCell.m */; };
+		62753C1D17C0DD18005F379C /* LeaderboardDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C1C17C0DD18005F379C /* LeaderboardDemoLayer.m */; };
+		62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -317,6 +319,10 @@
 		62753C0617C0D096005F379C /* SWTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableView.m; sourceTree = "<group>"; };
 		62753C0717C0D096005F379C /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
 		62753C0817C0D096005F379C /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		62753C1B17C0DD18005F379C /* LeaderboardDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardDemoLayer.h; sourceTree = "<group>"; };
+		62753C1C17C0DD18005F379C /* LeaderboardDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardDemoLayer.m; sourceTree = "<group>"; };
+		62753C1E17C0DD2D005F379C /* ScoreboardDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardDemoLayer.h; sourceTree = "<group>"; };
+		62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardDemoLayer.m; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -527,6 +533,10 @@
 			children = (
 				623C478217B67ED5007A9679 /* Leaderboard */,
 				623C478517B67ED5007A9679 /* ScoreBoardEntry */,
+				62753C1B17C0DD18005F379C /* LeaderboardDemoLayer.h */,
+				62753C1C17C0DD18005F379C /* LeaderboardDemoLayer.m */,
+				62753C1E17C0DD2D005F379C /* ScoreboardDemoLayer.h */,
+				62753C1F17C0DD2D005F379C /* ScoreboardDemoLayer.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1056,6 +1066,8 @@
 				62753C1817C0D096005F379C /* SWSorting.m in Sources */,
 				62753C1917C0D096005F379C /* SWTableView.m in Sources */,
 				62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */,
+				62753C1D17C0DD18005F379C /* LeaderboardDemoLayer.m in Sources */,
+				62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
