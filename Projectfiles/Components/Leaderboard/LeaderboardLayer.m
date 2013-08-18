@@ -7,26 +7,46 @@
 //
 
 #import "LeaderboardLayer.h"
+#import "CCControlButton.h"
+#import "CCScale9Sprite.h"
 #import <mgwuSDK/MGWU.h>
 
 #define FONT_NAME @"Avenir-Black" 
 #define FONT_SIZE 12
-#define FONT_COLOR ccc3(255, 0, 0)
+#define FONT_SIZE_PERSONALBEST 18
+#define FONT_COLOR ccc3(0, 0, 0)
+#define MARGIN_HEADER 20
+#define MARGIN_PERSONAL_BEST 10
 
 @implementation LeaderboardLayer
 {
     // label for player's personal best
     CCLabelTTF *userBestLabel;
+    
     // stores labels for the top 10
     NSMutableArray *scoreBoardLabels;
+    
+    // image presented as leaderboard heading
+    CCSprite *leaderboardHeader;
+ 
+    // main menu button
+    CCControlButton *mainMenuButton;
+    
+    // target to call when the main menu button is pressed
+    id target;
+    
+    // selector to call when the main menu button is pressed
+    SEL selector;
 }
 
-- (id)init
+- (id)initWithTarget:(id)t selector:(SEL)s
 {
     self = [super init];
     
     if (self)
     {
+        target = t;
+        selector = s;
         scoreBoardLabels = [[NSMutableArray alloc] init];
     }
     
@@ -47,21 +67,34 @@
     colorLayer.anchorPoint = ccp(0,0);
     [self addChild:colorLayer z:0];
     
+    // add main menu button
+    CCScale9Sprite *btnBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:@"mainMenu.png"];
+    mainMenuButton = [CCControlButton buttonWithBackgroundSprite:btnBackgroundSprite];
+    mainMenuButton.position = ccp(self.contentSize.width - mainMenuButton.contentSize.width, self.contentSize.height - mainMenuButton.contentSize.height);
+    [self addChild:mainMenuButton];
+    
+    // addd leaderboard heading
+    leaderboardHeader = [CCSprite spriteWithFile:@"leaderboard.png"];
+    leaderboardHeader.position = ccp(self.contentSize.width / 2, self.contentSize.height - (0.5 * leaderboardHeader.contentSize.height));
+    [self addChild:leaderboardHeader];
+    
+    int yPosition = leaderboardHeader.position.y - (leaderboardHeader.contentSize.height / 2) - MARGIN_HEADER;
+    
     // player's best
-    userBestLabel = [CCLabelTTF labelWithString:@"Your Personal Best: No Score submitted so far." fontName:FONT_NAME fontSize:FONT_SIZE];
+    userBestLabel = [CCLabelTTF labelWithString:@"Your Personal Best: No Score submitted so far." fontName:FONT_NAME fontSize:FONT_SIZE_PERSONALBEST];
     userBestLabel.dimensions = CGSizeMake(self.contentSize.width, userBestLabel.fontSize * 1.5);
     userBestLabel.color = FONT_COLOR;
-    userBestLabel.position = ccp((self.contentSize.width / 2) , self.contentSize.height - 20);
+    userBestLabel.position = ccp((self.contentSize.width / 2) , yPosition);
     userBestLabel.horizontalAlignment = kCCTextAlignmentCenter;
     [self addChild:userBestLabel];
     
-    int yPosition = userBestLabel.position.y - userBestLabel.dimensions.height - 20;
+    yPosition = userBestLabel.position.y - userBestLabel.dimensions.height - MARGIN_PERSONAL_BEST;
     
     // 10 global best
     for (int i = 0; i < 10; i++)
     {
         CCLabelTTF *entryLabel = [CCLabelTTF labelWithString:@"" fontName:FONT_NAME fontSize:FONT_SIZE];
-        entryLabel.dimensions = CGSizeMake(self.contentSize.width, userBestLabel.fontSize * 1.5);
+        entryLabel.dimensions = CGSizeMake(self.contentSize.width, userBestLabel.fontSize * 1.2);
         entryLabel.position = ccp((self.contentSize.width / 2), yPosition);
         entryLabel.color = FONT_COLOR;
         entryLabel.horizontalAlignment = kCCTextAlignmentCenter;

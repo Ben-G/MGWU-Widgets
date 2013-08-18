@@ -97,6 +97,28 @@
 		623C479317B67ED5007A9679 /* coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 623C478A17B67ED5007A9679 /* coin-hd.png */; };
 		623C479417B67ED5007A9679 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 623C478B17B67ED5007A9679 /* coin.png */; };
 		623C479517B67ED5007A9679 /* ScoreboardEntryNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 623C478D17B67ED5007A9679 /* ScoreboardEntryNode.m */; };
+		62753BD617C0C601005F379C /* leaderboard-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753BD417C0C601005F379C /* leaderboard-hd.png */; };
+		62753BD717C0C601005F379C /* leaderboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753BD517C0C601005F379C /* leaderboard.png */; };
+		62753BDA17C0CF02005F379C /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753BD817C0CF02005F379C /* mainMenu.png */; };
+		62753BDB17C0CF02005F379C /* mainMenu-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753BD917C0CF02005F379C /* mainMenu-hd.png */; };
+		62753C0917C0D096005F379C /* CCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BE017C0D096005F379C /* CCControl.m */; };
+		62753C0A17C0D096005F379C /* CCControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BE217C0D096005F379C /* CCControlButton.m */; };
+		62753C0B17C0D096005F379C /* CCControlColourPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BE417C0D096005F379C /* CCControlColourPicker.m */; };
+		62753C0C17C0D096005F379C /* CCControlPotentiometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BE617C0D096005F379C /* CCControlPotentiometer.m */; };
+		62753C0D17C0D096005F379C /* CCControlSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BE817C0D096005F379C /* CCControlSlider.m */; };
+		62753C0E17C0D096005F379C /* CCControlStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BEA17C0D096005F379C /* CCControlStepper.m */; };
+		62753C0F17C0D096005F379C /* CCControlSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BEC17C0D096005F379C /* CCControlSwitch.m */; };
+		62753C1017C0D096005F379C /* ccControlShaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BEF17C0D096005F379C /* ccControlShaders.m */; };
+		62753C1117C0D096005F379C /* CCColourUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BF417C0D096005F379C /* CCColourUtils.m */; };
+		62753C1217C0D096005F379C /* CCScale9Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BF617C0D096005F379C /* CCScale9Sprite.m */; };
+		62753C1317C0D096005F379C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 62753BF817C0D096005F379C /* README.md */; };
+		62753C1417C0D096005F379C /* CCMenuBlocking.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BFB17C0D096005F379C /* CCMenuBlocking.m */; };
+		62753C1517C0D096005F379C /* CCNode+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753BFE17C0D096005F379C /* CCNode+Autolayout.m */; };
+		62753C1617C0D096005F379C /* SWMultiColumnTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0017C0D096005F379C /* SWMultiColumnTableView.m */; };
+		62753C1717C0D096005F379C /* SWScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0217C0D096005F379C /* SWScrollView.m */; };
+		62753C1817C0D096005F379C /* SWSorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0417C0D096005F379C /* SWSorting.m */; };
+		62753C1917C0D096005F379C /* SWTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0617C0D096005F379C /* SWTableView.m */; };
+		62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C0817C0D096005F379C /* SWTableViewCell.m */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -253,6 +275,48 @@
 		623C478B17B67ED5007A9679 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coin.png; sourceTree = "<group>"; };
 		623C478C17B67ED5007A9679 /* ScoreboardEntryNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreboardEntryNode.h; sourceTree = "<group>"; };
 		623C478D17B67ED5007A9679 /* ScoreboardEntryNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreboardEntryNode.m; sourceTree = "<group>"; };
+		62753BD417C0C601005F379C /* leaderboard-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaderboard-hd.png"; sourceTree = "<group>"; };
+		62753BD517C0C601005F379C /* leaderboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaderboard.png; sourceTree = "<group>"; };
+		62753BD817C0CF02005F379C /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
+		62753BD917C0CF02005F379C /* mainMenu-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainMenu-hd.png"; sourceTree = "<group>"; };
+		62753BDF17C0D096005F379C /* CCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControl.h; sourceTree = "<group>"; };
+		62753BE017C0D096005F379C /* CCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControl.m; sourceTree = "<group>"; };
+		62753BE117C0D096005F379C /* CCControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlButton.h; sourceTree = "<group>"; };
+		62753BE217C0D096005F379C /* CCControlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlButton.m; sourceTree = "<group>"; };
+		62753BE317C0D096005F379C /* CCControlColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlColourPicker.h; sourceTree = "<group>"; };
+		62753BE417C0D096005F379C /* CCControlColourPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlColourPicker.m; sourceTree = "<group>"; };
+		62753BE517C0D096005F379C /* CCControlPotentiometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlPotentiometer.h; sourceTree = "<group>"; };
+		62753BE617C0D096005F379C /* CCControlPotentiometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlPotentiometer.m; sourceTree = "<group>"; };
+		62753BE717C0D096005F379C /* CCControlSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSlider.h; sourceTree = "<group>"; };
+		62753BE817C0D096005F379C /* CCControlSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlSlider.m; sourceTree = "<group>"; };
+		62753BE917C0D096005F379C /* CCControlStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlStepper.h; sourceTree = "<group>"; };
+		62753BEA17C0D096005F379C /* CCControlStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlStepper.m; sourceTree = "<group>"; };
+		62753BEB17C0D096005F379C /* CCControlSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSwitch.h; sourceTree = "<group>"; };
+		62753BEC17C0D096005F379C /* CCControlSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlSwitch.m; sourceTree = "<group>"; };
+		62753BEE17C0D096005F379C /* ccControlShaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccControlShaders.h; sourceTree = "<group>"; };
+		62753BEF17C0D096005F379C /* ccControlShaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ccControlShaders.m; sourceTree = "<group>"; };
+		62753BF017C0D096005F379C /* ccShader_ControlSwitchMask_frag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccShader_ControlSwitchMask_frag.h; sourceTree = "<group>"; };
+		62753BF217C0D096005F379C /* ARCMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCMacro.h; sourceTree = "<group>"; };
+		62753BF317C0D096005F379C /* CCColourUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColourUtils.h; sourceTree = "<group>"; };
+		62753BF417C0D096005F379C /* CCColourUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColourUtils.m; sourceTree = "<group>"; };
+		62753BF517C0D096005F379C /* CCScale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScale9Sprite.h; sourceTree = "<group>"; };
+		62753BF617C0D096005F379C /* CCScale9Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9Sprite.m; sourceTree = "<group>"; };
+		62753BF717C0D096005F379C /* CCControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlExtension.h; sourceTree = "<group>"; };
+		62753BF817C0D096005F379C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		62753BFA17C0D096005F379C /* CCMenuBlocking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCMenuBlocking.h; sourceTree = "<group>"; };
+		62753BFB17C0D096005F379C /* CCMenuBlocking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCMenuBlocking.m; sourceTree = "<group>"; };
+		62753BFD17C0D096005F379C /* CCNode+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+Autolayout.h"; sourceTree = "<group>"; };
+		62753BFE17C0D096005F379C /* CCNode+Autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+Autolayout.m"; sourceTree = "<group>"; };
+		62753BFF17C0D096005F379C /* SWMultiColumnTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMultiColumnTableView.h; sourceTree = "<group>"; };
+		62753C0017C0D096005F379C /* SWMultiColumnTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMultiColumnTableView.m; sourceTree = "<group>"; };
+		62753C0117C0D096005F379C /* SWScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWScrollView.h; sourceTree = "<group>"; };
+		62753C0217C0D096005F379C /* SWScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWScrollView.m; sourceTree = "<group>"; };
+		62753C0317C0D096005F379C /* SWSorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSorting.h; sourceTree = "<group>"; };
+		62753C0417C0D096005F379C /* SWSorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSorting.m; sourceTree = "<group>"; };
+		62753C0517C0D096005F379C /* SWTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableView.h; sourceTree = "<group>"; };
+		62753C0617C0D096005F379C /* SWTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableView.m; sourceTree = "<group>"; };
+		62753C0717C0D096005F379C /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		62753C0817C0D096005F379C /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -470,6 +534,7 @@
 		623C478217B67ED5007A9679 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
+				62753BD317C0C601005F379C /* Resources */,
 				623C478317B67ED5007A9679 /* LeaderboardLayer.h */,
 				623C478417B67ED5007A9679 /* LeaderboardLayer.m */,
 			);
@@ -489,6 +554,111 @@
 				623C478D17B67ED5007A9679 /* ScoreboardEntryNode.m */,
 			);
 			path = ScoreBoardEntry;
+			sourceTree = "<group>";
+		};
+		62753BD317C0C601005F379C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62753BD817C0CF02005F379C /* mainMenu.png */,
+				62753BD917C0CF02005F379C /* mainMenu-hd.png */,
+				62753BD417C0C601005F379C /* leaderboard-hd.png */,
+				62753BD517C0C601005F379C /* leaderboard.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		62753BDC17C0D096005F379C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				62753BDD17C0D096005F379C /* CCControlExtension */,
+				62753BF917C0D096005F379C /* CCMenu */,
+				62753BFC17C0D096005F379C /* SWTable */,
+			);
+			name = Extensions;
+			path = Projectfiles/Extensions;
+			sourceTree = "<group>";
+		};
+		62753BDD17C0D096005F379C /* CCControlExtension */ = {
+			isa = PBXGroup;
+			children = (
+				62753BDE17C0D096005F379C /* CCControl */,
+				62753BF717C0D096005F379C /* CCControlExtension.h */,
+				62753BF817C0D096005F379C /* README.md */,
+			);
+			path = CCControlExtension;
+			sourceTree = "<group>";
+		};
+		62753BDE17C0D096005F379C /* CCControl */ = {
+			isa = PBXGroup;
+			children = (
+				62753BDF17C0D096005F379C /* CCControl.h */,
+				62753BE017C0D096005F379C /* CCControl.m */,
+				62753BE117C0D096005F379C /* CCControlButton.h */,
+				62753BE217C0D096005F379C /* CCControlButton.m */,
+				62753BE317C0D096005F379C /* CCControlColourPicker.h */,
+				62753BE417C0D096005F379C /* CCControlColourPicker.m */,
+				62753BE517C0D096005F379C /* CCControlPotentiometer.h */,
+				62753BE617C0D096005F379C /* CCControlPotentiometer.m */,
+				62753BE717C0D096005F379C /* CCControlSlider.h */,
+				62753BE817C0D096005F379C /* CCControlSlider.m */,
+				62753BE917C0D096005F379C /* CCControlStepper.h */,
+				62753BEA17C0D096005F379C /* CCControlStepper.m */,
+				62753BEB17C0D096005F379C /* CCControlSwitch.h */,
+				62753BEC17C0D096005F379C /* CCControlSwitch.m */,
+				62753BED17C0D096005F379C /* Shaders */,
+				62753BF117C0D096005F379C /* Utils */,
+			);
+			path = CCControl;
+			sourceTree = "<group>";
+		};
+		62753BED17C0D096005F379C /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				62753BEE17C0D096005F379C /* ccControlShaders.h */,
+				62753BEF17C0D096005F379C /* ccControlShaders.m */,
+				62753BF017C0D096005F379C /* ccShader_ControlSwitchMask_frag.h */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		62753BF117C0D096005F379C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				62753BF217C0D096005F379C /* ARCMacro.h */,
+				62753BF317C0D096005F379C /* CCColourUtils.h */,
+				62753BF417C0D096005F379C /* CCColourUtils.m */,
+				62753BF517C0D096005F379C /* CCScale9Sprite.h */,
+				62753BF617C0D096005F379C /* CCScale9Sprite.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		62753BF917C0D096005F379C /* CCMenu */ = {
+			isa = PBXGroup;
+			children = (
+				62753BFA17C0D096005F379C /* CCMenuBlocking.h */,
+				62753BFB17C0D096005F379C /* CCMenuBlocking.m */,
+			);
+			path = CCMenu;
+			sourceTree = "<group>";
+		};
+		62753BFC17C0D096005F379C /* SWTable */ = {
+			isa = PBXGroup;
+			children = (
+				62753BFD17C0D096005F379C /* CCNode+Autolayout.h */,
+				62753BFE17C0D096005F379C /* CCNode+Autolayout.m */,
+				62753BFF17C0D096005F379C /* SWMultiColumnTableView.h */,
+				62753C0017C0D096005F379C /* SWMultiColumnTableView.m */,
+				62753C0117C0D096005F379C /* SWScrollView.h */,
+				62753C0217C0D096005F379C /* SWScrollView.m */,
+				62753C0317C0D096005F379C /* SWSorting.h */,
+				62753C0417C0D096005F379C /* SWSorting.m */,
+				62753C0517C0D096005F379C /* SWTableView.h */,
+				62753C0617C0D096005F379C /* SWTableView.m */,
+				62753C0717C0D096005F379C /* SWTableViewCell.h */,
+				62753C0817C0D096005F379C /* SWTableViewCell.m */,
+			);
+			path = SWTable;
 			sourceTree = "<group>";
 		};
 		DC1BE68414F417CC00F49D25 /* ubuntu-font-family-0.80 */ = {
@@ -516,6 +686,7 @@
 		DCC1A0D613A94EC0005BD75D = {
 			isa = PBXGroup;
 			children = (
+				62753BDC17C0D096005F379C /* Extensions */,
 				DCC1A38C13A94F1A005BD75D /* Projectfiles */,
 				DCC1A0F713A94ED5005BD75D /* Projectfiles-iOS */,
 				DCC1A26413A94EE6005BD75D /* Projectfiles-Mac */,
@@ -832,6 +1003,11 @@
 				623C479217B67ED5007A9679 /* avenir.png in Resources */,
 				623C479317B67ED5007A9679 /* coin-hd.png in Resources */,
 				623C479417B67ED5007A9679 /* coin.png in Resources */,
+				62753BD617C0C601005F379C /* leaderboard-hd.png in Resources */,
+				62753BD717C0C601005F379C /* leaderboard.png in Resources */,
+				62753BDA17C0CF02005F379C /* mainMenu.png in Resources */,
+				62753BDB17C0CF02005F379C /* mainMenu-hd.png in Resources */,
+				62753C1317C0D096005F379C /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,6 +1039,23 @@
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
 				623C478E17B67ED5007A9679 /* LeaderboardLayer.m in Sources */,
 				623C479517B67ED5007A9679 /* ScoreboardEntryNode.m in Sources */,
+				62753C0917C0D096005F379C /* CCControl.m in Sources */,
+				62753C0A17C0D096005F379C /* CCControlButton.m in Sources */,
+				62753C0B17C0D096005F379C /* CCControlColourPicker.m in Sources */,
+				62753C0C17C0D096005F379C /* CCControlPotentiometer.m in Sources */,
+				62753C0D17C0D096005F379C /* CCControlSlider.m in Sources */,
+				62753C0E17C0D096005F379C /* CCControlStepper.m in Sources */,
+				62753C0F17C0D096005F379C /* CCControlSwitch.m in Sources */,
+				62753C1017C0D096005F379C /* ccControlShaders.m in Sources */,
+				62753C1117C0D096005F379C /* CCColourUtils.m in Sources */,
+				62753C1217C0D096005F379C /* CCScale9Sprite.m in Sources */,
+				62753C1417C0D096005F379C /* CCMenuBlocking.m in Sources */,
+				62753C1517C0D096005F379C /* CCNode+Autolayout.m in Sources */,
+				62753C1617C0D096005F379C /* SWMultiColumnTableView.m in Sources */,
+				62753C1717C0D096005F379C /* SWScrollView.m in Sources */,
+				62753C1817C0D096005F379C /* SWSorting.m in Sources */,
+				62753C1917C0D096005F379C /* SWTableView.m in Sources */,
+				62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

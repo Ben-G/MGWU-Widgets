@@ -36,7 +36,7 @@
 - (void)onEnterTransitionDidFinish {
     [super onEnterTransitionDidFinish];
     
-    LeaderboardLayer *leaderboard = [[LeaderboardLayer alloc] init];
+    LeaderboardLayer *leaderboard = [[LeaderboardLayer alloc] initWithTarget:self selector:@selector(buttonPressed)];
     [[CCDirector sharedDirector] replaceScene:leaderboard];
 }
 
