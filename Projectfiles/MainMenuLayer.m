@@ -5,7 +5,7 @@
  * Released under MIT License in Germany (LICENSE-Kobold2D.txt).
  */
 
-#import "HelloWorldLayer.h"
+#import "MainMenuLayer.h"
 #import "SimpleAudioEngine.h"
 #import "ScoreboardEntryNode.h"
 #import "LeaderboardLayer.h"
@@ -15,13 +15,10 @@
 #import "PopupDemoLayer.h"
 #import "PopupInputDemoLayer.h"
 
-@interface HelloWorldLayer (PrivateMethods)
+@interface MainMenuLayer (PrivateMethods)
 @end
 
-@implementation HelloWorldLayer
-
-@synthesize helloWorldString, helloWorldFontName;
-@synthesize helloWorldFontSize;
+@implementation MainMenuLayer
 
 -(id) init
 {

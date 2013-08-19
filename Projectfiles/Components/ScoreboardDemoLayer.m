@@ -18,6 +18,7 @@
     
     if (self)
     {
+        // The scoreboard can be initialized with a custom score image, or without one
         scoreBoard = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
         [self addChild:scoreBoard];
         scoreBoard.position = ccp(8, self.contentSize.height - 20);
@@ -43,6 +44,7 @@
 
 - (void)changePoints
 {
+    // points can be changed animated or unanimated
     [scoreBoard setScore:(scoreBoard.score + 20) animated:TRUE];
     [self performSelector:@selector(changePoints) withObject:nil afterDelay:0.5f];
 }

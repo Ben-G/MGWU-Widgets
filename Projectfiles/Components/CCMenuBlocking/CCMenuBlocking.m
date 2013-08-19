@@ -8,11 +8,13 @@
 
 #import "CCMenuBlocking.h"
 
-@implementation CCMenuBlocking {
+@implementation CCMenuBlocking
+{
     BOOL _touchClaimingCausedByInterceptor;
 }
 
-- (void)onEnter {
+- (void)onEnter
+{
     [super onEnter];
     
     // remove the previously added delegate of CCMenu
@@ -21,7 +23,8 @@
     [[CCDirector sharedDirector].touchDispatcher addTargetedDelegate:self priority:(-1)*MAX_INT swallowsTouches:TRUE];
 }
 
-- (void)onExit {
+- (void)onExit
+{
     [super onExit];
     
     // remove the swallowing touches delegate
@@ -41,7 +44,8 @@
 	return TRUE;
 }
 
--(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
     // only forward touchEnded message if the touch was claimed by CCMenu and not the CCMenuBlocking touch interceptor
     if (! _touchClaimingCausedByInterceptor)
     {
