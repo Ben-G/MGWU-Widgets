@@ -15,26 +15,30 @@
 #define WHITE_FONT_COLOR ccc3(255, 255, 255)
 #define DEFAULT_FONT @"Avenir-Black"
 
+#define DEFAULT_CONTENT_SIZE CGSizeMake(250, 200)
+#define DEFAULT_BUTTON_IMAGE [PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder]
+#define DEFAULT_BACKGROUND_IMAGE [PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder]
+
 @implementation PopupProvider
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:DEFAULT_CONTENT_SIZE atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:CGSizeMake(250, 200) atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:DEFAULT_CONTENT_SIZE atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField {
     
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField {
 
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:position backgroundImage:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder] target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:position backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
@@ -44,10 +48,15 @@
 
 + (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage buttonImage:(CCScale9Sprite *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles {
+    
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:backgroundImage.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
+}
+
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(CCScale9Sprite *)backgroundImage buttonImage:(CCScale9Sprite *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
     // create a popup with a content size
     PopUp *popUp = [PopUp node];
@@ -110,7 +119,7 @@
     for (unsigned int i = 0; i < [buttonTitles count]; i++)
     {
         // add a login button for the user
-        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:[PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder]];
+        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:buttonImage];
         [popUpButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
         [popUpButton setTitleTTFSize:16 forState:CCControlStateNormal];
         [popUpButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];
