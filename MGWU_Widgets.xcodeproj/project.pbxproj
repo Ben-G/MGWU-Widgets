@@ -130,6 +130,8 @@
 		62753C3C17C1099C005F379C /* 9patch_whiteBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */; };
 		62753C3D17C1099C005F379C /* 9patch_whiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */; };
 		62753C4717C1211C005F379C /* PopupInputDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C4617C1211B005F379C /* PopupInputDemoLayer.m */; };
+		62A8F0F517F0AD190045B83E /* usernamepopup_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F0F317F0AD190045B83E /* usernamepopup_background.png */; };
+		62A8F0F617F0AD190045B83E /* usernamepopup_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F0F417F0AD190045B83E /* usernamepopup_button.png */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -349,6 +351,8 @@
 		62753C4417C119C6005F379C /* PopUpProtected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpProtected.h; sourceTree = "<group>"; };
 		62753C4517C1211A005F379C /* PopupInputDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupInputDemoLayer.h; sourceTree = "<group>"; };
 		62753C4617C1211B005F379C /* PopupInputDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupInputDemoLayer.m; sourceTree = "<group>"; };
+		62A8F0F317F0AD190045B83E /* usernamepopup_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usernamepopup_background.png; sourceTree = "<group>"; };
+		62A8F0F417F0AD190045B83E /* usernamepopup_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usernamepopup_button.png; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -732,6 +736,8 @@
 		62753C3917C1099C005F379C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				62A8F0F317F0AD190045B83E /* usernamepopup_background.png */,
+				62A8F0F417F0AD190045B83E /* usernamepopup_button.png */,
 				62753C3A17C1099C005F379C /* 9patch_whiteBackground-hd.png */,
 				62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */,
 			);
@@ -999,6 +1005,7 @@
 				DC1BE6A914F417CC00F49D25 /* UbuntuMono-B.ttf in Resources */,
 				DC1BE6AA14F417CC00F49D25 /* UbuntuMono-BI.ttf in Resources */,
 				DC1BE6AB14F417CC00F49D25 /* UbuntuMono-R.ttf in Resources */,
+				62A8F0F617F0AD190045B83E /* usernamepopup_button.png in Resources */,
 				DC1BE6AC14F417CC00F49D25 /* UbuntuMono-RI.ttf in Resources */,
 				DC26D6DA14B9F2C600B6002E /* fps_images-hd.png in Resources */,
 				DC65617315114B4A00E59F8A /* fps_images-ipadhd.png in Resources */,
@@ -1062,6 +1069,7 @@
 				623C475C17B67DB9007A9679 /* mgwuLogo.png in Resources */,
 				623C475D17B67DB9007A9679 /* mgwuLogo@2x.png in Resources */,
 				623C475E17B67DB9007A9679 /* mgwuLogoDark.png in Resources */,
+				62A8F0F517F0AD190045B83E /* usernamepopup_background.png in Resources */,
 				623C475F17B67DB9007A9679 /* mgwuLogoDark@2x.png in Resources */,
 				623C476017B67DB9007A9679 /* mgwuPlaceholderIcon.png in Resources */,
 				623C476117B67DB9007A9679 /* mgwuPlaceholderIcon@2x.png in Resources */,

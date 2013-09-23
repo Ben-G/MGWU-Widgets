@@ -29,10 +29,13 @@
         CCLabelTTF *popupLabel = [CCLabelTTF labelWithString:@"Show Input Popup" fontName:@"Arial" fontSize:14];
         CCMenuItemLabel *popupMenuItem = [CCMenuItemLabel itemWithLabel:popupLabel target:self selector:@selector(showPopup)];
         
+        CCLabelTTF *fancyPopupLabel = [CCLabelTTF labelWithString:@"Show Fancy Popup" fontName:@"Arial" fontSize:14];
+        CCMenuItemLabel *fancyPopupMenuItem = [CCMenuItemLabel itemWithLabel:fancyPopupLabel target:self selector:@selector(showFancyPopup)];
+        
         CCLabelTTF *backLabel = [CCLabelTTF labelWithString:@"Back" fontName:@"Arial" fontSize:14];
         CCMenuItemLabel *backItem = [CCMenuItemLabel itemWithLabel:backLabel target:self selector:@selector(back)];
         
-        CCMenu *menu = [CCMenu menuWithItems:popupMenuItem, backItem, nil];
+        CCMenu *menu = [CCMenu menuWithItems:popupMenuItem, fancyPopupMenuItem, backItem, nil];
         [menu alignItemsVertically];
         
         [self addChild:menu];
@@ -60,6 +63,15 @@
     
     /* INFO: There are many overloaded methods that allow to create a popup. In the most simple one, you do not need to provide
        a custom size or a custom position! */
+}
+
+- (void)showFancyPopup
+{
+    CGPoint presentationPositon = ccp(self.contentSize.width / 2, self.contentSize.height - 100);
+    
+    NSString *popUpMessage = @"Demo Popup!";
+    
+    popup = [PopupProvider presentPopUpWithContentString:popUpMessage contentSize:CGSizeMake(220, 150)  atPosition:presentationPositon backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:) buttonTitles:@[@"Send", @"Don't Send"] showsInputField:TRUE];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender
