@@ -27,6 +27,7 @@
 		glClearColor(0.2f, 0.2f, 0.4f, 1.0f);
         
         CCLabelTTF *leaderboardLabel = [CCLabelTTF labelWithString:@"Leaderboard" fontName:@"Arial" fontSize:14];
+        
         CCMenuItem *leaderboardItem = [CCMenuItemLabel itemWithLabel:leaderboardLabel target:self selector:@selector(presentLeaderboard)];
         
         CCLabelTTF *scoreBoardLabel = [CCLabelTTF labelWithString:@"Scoreboard" fontName:@"Arial" fontSize:14];
@@ -42,6 +43,8 @@
         CCMenuItem *inputPopupItem = [CCMenuItemLabel itemWithLabel:inputPopupLabel target:self selector:@selector(presentInputPopup)];
         
         CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, nil];
+        menu.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+        
         [menu alignItemsVertically];
         
         [self addChild:menu];

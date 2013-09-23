@@ -31,6 +31,8 @@
         [menu alignItemsVertically];
         
         [self addChild:menu];
+        
+        menu.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
     }
     
     return self;

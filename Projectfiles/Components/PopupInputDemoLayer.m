@@ -45,6 +45,8 @@
         contentLabel = [CCLabelTTF labelWithString:@"Nothing entered yet." fontName:@"Arial" fontSize:14];
         contentLabel.position = ccp(self.contentSize.width / 2, self.contentSize.height - 60);
         [self addChild:contentLabel];
+        
+        menu.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
     }
     
     return self;

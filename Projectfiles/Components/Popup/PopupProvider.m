@@ -16,8 +16,9 @@
 #define DEFAULT_FONT @"Avenir-Black"
 
 #define DEFAULT_CONTENT_SIZE CGSizeMake(250, 200)
-#define DEFAULT_BUTTON_IMAGE [PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder]
-#define DEFAULT_BACKGROUND_IMAGE [PopupProvider scaleSpriteWhiteBackgroundSolidBlackBorder]
+#define DEFAULT_BUTTON_IMAGE @"9patch_whiteBackground.png"
+#define DEFAULT_BACKGROUND_IMAGE @"9patch_whiteBackground.png"
+
 
 @implementation PopupProvider
 
@@ -41,27 +42,30 @@
     return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:position backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:showsInputField];
 }
 
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:backgroundImage.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
+    CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
+    
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
 }
 
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles
 {
     return [PopupProvider presentPopUpWithContentString:contentString contentSize:contentSize atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector buttonTitles:buttonTitles showsInputField:FALSE];
 }
 
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage buttonImage:(CCScale9Sprite *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles {
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles {
+    CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
     
-    return [PopupProvider presentPopUpWithContentString:contentString contentSize:backgroundImage.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
+    return [PopupProvider presentPopUpWithContentString:contentString contentSize:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector buttonTitles:buttonTitles];
 }
 
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(CCScale9Sprite *)backgroundImage buttonImage:(CCScale9Sprite *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
 {
     // create a popup with a content size
     PopUp *popUp = [PopUp node];
     popUp.contentSize = contentSize;
-    popUp.backgroundScaleSprite = backgroundImage;
+    popUp.backgroundScaleSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
     
     CCNode *parentNode = [[CCDirector sharedDirector] runningScene];
     CGPoint presentationPosition;
@@ -119,7 +123,9 @@
     for (unsigned int i = 0; i < [buttonTitles count]; i++)
     {
         // add a login button for the user
-        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:buttonImage];
+        CCScale9Sprite *buttonBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:buttonImage];
+        
+        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:buttonBackgroundSprite];
         [popUpButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
         [popUpButton setTitleTTFSize:16 forState:CCControlStateNormal];
         [popUpButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];

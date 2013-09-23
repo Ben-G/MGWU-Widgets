@@ -31,6 +31,8 @@
         [self performSelector:@selector(changePoints) withObject:nil afterDelay:0.5f];
         
         [self addChild:menu];
+        
+        menu.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
     }
     
     return self;

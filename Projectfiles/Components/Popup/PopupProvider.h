@@ -27,21 +27,21 @@
 /*
  PopUp with custom image and custom size
  */
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
 
 /*
  PopUp with custom image and automatic size (PopUp is as big as background Sprite)
  */
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
 
 /*
  PopUp with custom image and automatic size (PopUp is as big as background Sprite) and custom button images
  */
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(CCScale9Sprite *)backgroundImage buttonImage:(CCScale9Sprite *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles;
 
 /*
  Fully custom popup.
  */
-+ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(CCScale9Sprite *)backgroundImage buttonImage:(CCScale9Sprite *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField;
++ (PopUp *)presentPopUpWithContentString:(NSString *)contentString contentSize:(CGSize)contentSize atPosition:(CGPoint)position backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector buttonTitles:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField;
 
 @end
