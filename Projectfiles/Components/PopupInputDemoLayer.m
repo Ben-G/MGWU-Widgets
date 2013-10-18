@@ -7,9 +7,7 @@
 //
 
 #import "PopupInputDemoLayer.h"
-#import "PopupProvider.h"
 #import "PopUp.h"
-#import "CCControlButton.h"
 
 #define POPUP_TOP_MARGIN 10
 #define POPUP_HEIGHT 150
@@ -59,7 +57,7 @@
 {
     CGPoint presentationPositon = ccp(self.contentSize.width / 2, self.contentSize.height - POPUP_TOP_MARGIN - 0.5*POPUP_HEIGHT);
     NSString *popUpMessage = @"Enter your name: \n Second Line Test";
-    popup = [PopupProvider presentPopUpWithContentString:popUpMessage contentSize:CGSizeMake(POPUP_WIDTH, POPUP_HEIGHT) atPosition:presentationPositon target:self selector:@selector(popUpButtonClicked:) buttonTitles:@[@"OK", @"Cancel"] showsInputField:TRUE];
+    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK", @"Cancel"] showsInputField:TRUE size:CGSizeMake(POPUP_WIDTH, POPUP_HEIGHT) atPosition:presentationPositon target:self selector:@selector(popUpButtonClicked:)];
     
     /* INFO: There are many overloaded methods that allow to create a popup. In the most simple one, you do not need to provide
        a custom size or a custom position! */
@@ -71,7 +69,7 @@
     
     NSString *popUpMessage = @"Demo Popup!";
     
-    popup = [PopupProvider presentPopUpWithContentString:popUpMessage contentSize:CGSizeMake(220, 150)  atPosition:presentationPositon backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:) buttonTitles:@[@"Send", @"Don't Send"] showsInputField:TRUE];
+    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"Send", @"Don't Send"] showsInputField:TRUE size:CGSizeMake(220, 150)  atPosition:presentationPositon backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:)];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender

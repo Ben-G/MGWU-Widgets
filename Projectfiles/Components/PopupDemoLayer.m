@@ -7,9 +7,7 @@
 //
 
 #import "PopupDemoLayer.h"
-#import "PopupProvider.h"
 #import "PopUp.h"
-#import "CCControlButton.h"
 
 @implementation PopupDemoLayer {
     PopUp *popup;
@@ -41,7 +39,7 @@
 - (void)showPopup
 {
     NSString *popUpMessage = @"Demo Popup!";
-    popup = [PopupProvider presentPopUpWithContentString:popUpMessage target:self selector:@selector(popUpButtonClicked:) buttonTitles:@[@"OK"]];
+    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK"] target:self selector:@selector(popUpButtonClicked:)];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender

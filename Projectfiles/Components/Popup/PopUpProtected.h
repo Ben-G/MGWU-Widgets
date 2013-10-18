@@ -13,6 +13,8 @@
 
 }
 
+- (void)presentOnNode:(CCNode *)parentNode position:(CGPoint)pos;
+
 @property (nonatomic, strong) UITextField *textField;
 
 @end
