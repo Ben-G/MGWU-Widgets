@@ -48,14 +48,19 @@
 + (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles size:(CGSize)size backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector;
 
 /*
- PopUp with custom image and automatic size (PopUp is as big as background Sprite)
+ PopUp with custom image and automatic size
  */
 + (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector;
 
 /*
- PopUp with custom image and automatic size (PopUp is as big as background Sprite) and custom button images
+ PopUp with custom image and automatic size and custom button images
  */
 + (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector;
+
+/*
+ PopUp with custom image, custom button image and automatic size
+ */
++ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField;
 
 /*
  Fully custom popup.

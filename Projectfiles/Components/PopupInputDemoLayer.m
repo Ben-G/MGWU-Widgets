@@ -64,11 +64,9 @@
 
 - (void)showFancyPopup
 {
-    CGPoint presentationPositon = ccp(self.contentSize.width / 2, self.contentSize.height - 100);
-    
     NSString *popUpMessage = @"Demo Popup!";
     
-    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"Send", @"Don't Send"] showsInputField:TRUE size:AUTOSIZING_CONTENT_SIZE  atPosition:presentationPositon backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:)];
+    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"Send", @"Don't Send"] backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender

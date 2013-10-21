@@ -11,6 +11,9 @@
 #import "PopUpProtected.h"
 #import "CCControlButton.h"
 
+#define KEYBOARD_HEIGHT_LANDSCAPE 162
+#define KEYBOARD_HEIGHT_PORTRAIT  216
+
 @interface PopUp()
 
 @property (nonatomic, assign) CGPoint presentationPosition;
@@ -28,6 +31,12 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRotate:) name:UIDeviceOrientationDidChangeNotification object:nil];
+    
+    if (self.textField) {
+        [self.textField becomeFirstResponder];
+    }
 }
 
 - (NSString *)textFieldText
@@ -66,6 +75,8 @@
 }
 
 - (void)onExit {
+    [super onExit];
+    
     [[CCDirector sharedDirector].touchDispatcher removeDelegate:self];
 }
 
@@ -153,6 +164,11 @@
     CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
     
     return [PopUp showWithMessage:message buttons:buttonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
+}
+
++ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField {
+
+    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:showsInputField size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:buttonImage target:target selector:selector];
 }
 
 + (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
@@ -271,6 +287,30 @@
     
     popUpContentLabel.position = ccp(popUp.contentSize.width / 2, popUp.contentSize.height - popUpContentLabel.contentSize.height - VERTICAL_MARGIN);
     
+    
+    BOOL landscape = FALSE;
+    
+    if ([[CCDirector sharedDirector] view].frame.size.width > [[CCDirector sharedDirector] view].frame.size.height) {
+        landscape = TRUE;
+    }
+    
+    int keyboardHeight = 0;
+    
+    if (landscape) {
+        keyboardHeight = KEYBOARD_HEIGHT_LANDSCAPE;
+    } else {
+        keyboardHeight = KEYBOARD_HEIGHT_PORTRAIT;
+    }
+    
+    if (textField) {
+        presentationPosition = ccp(presentationPosition.x, keyboardHeight + 0.5 * popUp.contentSize.height);
+         textFieldPosition = [popUp calculateTextFieldPosition:(keyboardHeight + 0.5 * popUp.contentSize.height)];
+        
+        textField.frame = CGRectMake(textFieldPosition.x, textFieldPosition.y, textField.frame.size.width, textField.frame.size.height);
+    }
+    
+    popUp.presentationPosition = presentationPosition;
+    
     // present the popup on the running scene
     [popUp presentOnNode:[[CCDirector sharedDirector] runningScene] position:presentationPosition];
     
@@ -323,5 +363,13 @@
     
     [self runAction:moveTo];
 }
+
+#pragma mark - Orientation Handling
+
+- (void)didRotate:(NSNotification *)notification {
+    [self dismiss];
+    [self presentOnNode:[[CCDirector sharedDirector] runningScene] position:self.presentationPosition];
+}
+
 
 @end
