@@ -58,9 +58,6 @@
     NSString *popUpMessage = @"Enter your name: \n Second Line Test";
     popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK", @"Cancel"] target:self selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
     
-   /* UIAlertView *testView = [[UIAlertView alloc] initWithTitle:nil message:@"Do this!" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-    testView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [testView show];*/
     /* INFO: There are many overloaded methods that allow to create a popup. In the most simple one, you do not need to provide
        a custom size or a custom position! */
 }

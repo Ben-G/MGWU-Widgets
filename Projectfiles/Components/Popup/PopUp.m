@@ -115,6 +115,7 @@
 #define DEFAULT_BACKGROUND_IMAGE @"9patch_whiteBackground.png"
 
 #define VERTICAL_MARGIN 10
+#define BUTTON_HEIGHT 30
 
 + (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles target:(id)target selector:(SEL)selector
 {
@@ -195,7 +196,6 @@
         popUpContentLabel.color = DEFAULT_FONT_COLOR;
         popUpContentLabel.anchorPoint = ccp(0.5, 0);
         requiredHeight += popUpContentLabel.contentSize.height + 2 * VERTICAL_MARGIN;
-        popUpContentLabel.position = ccp(popUp.contentSize.width / 2, popUp.contentSize.height - 60);
         [popUp addChild:popUpContentLabel];
     }
     
@@ -240,7 +240,7 @@
         [popUpButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];
         [popUpButton setTitle:[buttonTitles objectAtIndex:i] forState:CCControlStateNormal];
         popUpButton.anchorPoint = ccp(0, 0);
-        popUpButton.preferredSize = CGSizeMake(buttonSize, 30);
+        popUpButton.preferredSize = CGSizeMake(buttonSize, BUTTON_HEIGHT);
         popUpButton.position = ccp(xPos, VERTICAL_MARGIN);
         [popUpButton addTarget:target action:selector forControlEvents:CCControlEventTouchUpInside];
         // set the tag to the index of the button
@@ -255,7 +255,7 @@
     
     if ([buttonTitles count] > 0) {
         // height of buttons + button margin
-        requiredHeight += 30 + VERTICAL_MARGIN;
+        requiredHeight += BUTTON_HEIGHT + VERTICAL_MARGIN;
     }
     
     if (autosizing) {
@@ -264,7 +264,7 @@
     
     int textFieldWidth = (int) (0.8 * popUp.contentSize.width);
     int posX = presentationPosition.x - (textFieldWidth / 2);
-    CGPoint textFieldPosition = ccp(posX, presentationPosition.y - (popUp.contentSize.height/2) + textField.frame.size.height + 30 + VERTICAL_MARGIN + VERTICAL_MARGIN);
+    CGPoint textFieldPosition = ccp(posX, presentationPosition.y - (popUp.contentSize.height/2) + textField.frame.size.height + BUTTON_HEIGHT + VERTICAL_MARGIN + VERTICAL_MARGIN);
     CGPoint textFieldPositionUI = [[CCDirector sharedDirector] convertToUI:textFieldPosition];
     
     textField.frame = CGRectMake(textFieldPositionUI.x, textFieldPositionUI.y, 0.8 * popUp.contentSize.width, 25);
@@ -284,6 +284,15 @@
     return  [[CCScale9Sprite alloc] initWithFile:@"9patch_whiteBackground.png" capInsets:CGRectMake(10, 10, 40, 40)];
 }
 
+- (CGPoint)calculateTextFieldPosition:(int)yPosition {
+    int textFieldWidth = (int) (0.8 * self.contentSize.width);
+    int posX = self.presentationPosition.x - (textFieldWidth / 2);
+    CGPoint textFieldPosition = ccp(posX, yPosition - (self.contentSize.height/2) + self.textField.frame.size.height + BUTTON_HEIGHT + VERTICAL_MARGIN + VERTICAL_MARGIN);
+    CGPoint textFieldPositionUI = [[CCDirector sharedDirector] convertToUI:textFieldPosition];
+    
+    return textFieldPositionUI;
+}
+
 #pragma mark - Keyboard Handling
 
 - (void)keyboardWillShow:(NSNotification *)notification {    
@@ -294,10 +303,7 @@
     int newY = keyboardRect.size.height + 0.5 * self.contentSize.height;
     CCMoveTo *moveTo = [CCMoveTo actionWithDuration:.3f position:ccp(self.presentationPosition.x, newY)];
     
-    int textFieldWidth = (int) (0.8 * self.contentSize.width);
-    int posX = self.presentationPosition.x - (textFieldWidth / 2);
-    CGPoint textFieldPosition = ccp(posX, newY - (self.contentSize.height/2) + self.textField.frame.size.height + 30 + VERTICAL_MARGIN + VERTICAL_MARGIN);
-    CGPoint textFieldPositionUI = [[CCDirector sharedDirector] convertToUI:textFieldPosition];
+    CGPoint textFieldPositionUI = [self calculateTextFieldPosition:newY];
     
     [UIView animateWithDuration:.35f animations:^{
         self.textField.frame = CGRectMake(textFieldPositionUI.x, textFieldPositionUI.y, self.textField.frame.size.width, self.textField.frame.size.height);
@@ -309,10 +315,7 @@
 - (void)keyboardWillHide:(NSNotification *)notification {
     CCMoveTo *moveTo = [CCMoveTo actionWithDuration:.3f position:ccp(self.presentationPosition.x, self.presentationPosition.y)];
 
-    int textFieldWidth = (int) (0.8 * self.contentSize.width);
-    int posX = self.presentationPosition.x - (textFieldWidth / 2);
-    CGPoint textFieldPosition = ccp(posX, self.presentationPosition.y - (self.contentSize.height/2) + self.textField.frame.size.height + 30 + VERTICAL_MARGIN + VERTICAL_MARGIN);
-    CGPoint textFieldPositionUI = [[CCDirector sharedDirector] convertToUI:textFieldPosition];
+    CGPoint textFieldPositionUI = [self calculateTextFieldPosition:self.presentationPosition.y];
     
     [UIView animateWithDuration:.35f animations:^{
         self.textField.frame = CGRectMake(textFieldPositionUI.x, textFieldPositionUI.y, self.textField.frame.size.width, self.textField.frame.size.height);
