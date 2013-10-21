@@ -64,3 +64,6 @@
 
 
 @end
+
+// if popup is setup with this size, it will use automatic sizing
+#define AUTOSIZING_CONTENT_SIZE CGSizeMake(250, 0)

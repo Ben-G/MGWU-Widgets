@@ -38,7 +38,7 @@
 
 - (void)showPopup
 {
-    NSString *popUpMessage = @"Demo Popup!";
+    NSString *popUpMessage = @"Demo Popup !\n multiline \n autosize!";
     popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK"] target:self selector:@selector(popUpButtonClicked:)];
 }
 

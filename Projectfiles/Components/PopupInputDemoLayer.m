@@ -69,7 +69,7 @@
     
     NSString *popUpMessage = @"Demo Popup!";
     
-    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"Send", @"Don't Send"] showsInputField:TRUE size:CGSizeMake(220, 150)  atPosition:presentationPositon backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:)];
+    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"Send", @"Don't Send"] showsInputField:TRUE size:AUTOSIZING_CONTENT_SIZE  atPosition:presentationPositon backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:)];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender
