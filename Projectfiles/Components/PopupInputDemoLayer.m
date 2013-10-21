@@ -55,10 +55,12 @@
 
 - (void)showPopup
 {
-    CGPoint presentationPositon = ccp(self.contentSize.width / 2, self.contentSize.height - POPUP_TOP_MARGIN - 0.5*POPUP_HEIGHT);
     NSString *popUpMessage = @"Enter your name: \n Second Line Test";
-    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK", @"Cancel"] showsInputField:TRUE size:CGSizeMake(POPUP_WIDTH, POPUP_HEIGHT) atPosition:presentationPositon target:self selector:@selector(popUpButtonClicked:)];
+    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK", @"Cancel"] target:self selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
     
+   /* UIAlertView *testView = [[UIAlertView alloc] initWithTitle:nil message:@"Do this!" delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    testView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [testView show];*/
     /* INFO: There are many overloaded methods that allow to create a popup. In the most simple one, you do not need to provide
        a custom size or a custom position! */
 }
@@ -87,6 +89,5 @@
 {
     [[CCDirector sharedDirector] popScene];
 }
-
 
 @end

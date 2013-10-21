@@ -13,6 +13,8 @@
 
 @interface PopUp()
 
+@property (nonatomic, assign) CGPoint presentationPosition;
+
 @end
 
 @implementation PopUp
@@ -23,6 +25,9 @@
     [parentNode addChild:self z:MAX_INT];
     self.anchorPoint = ccp(0.5, 0.5);
     self.position = pos;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (NSString *)textFieldText
@@ -34,6 +39,8 @@
 {
     [self.textField removeFromSuperview];
     [self removeFromParent];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -173,6 +180,8 @@
         presentationPosition = ccp((parentNode.contentSize.width / 2), (parentNode.contentSize.height / 2));
     }
     
+    popUp.presentationPosition = presentationPosition;
+
     float requiredHeight = 0;
     
     CCLabelTTF *popUpContentLabel = nil;
@@ -273,6 +282,43 @@
 + (CCScale9Sprite *)scaleSpriteWhiteBackgroundSolidBlackBorder
 {
     return  [[CCScale9Sprite alloc] initWithFile:@"9patch_whiteBackground.png" capInsets:CGRectMake(10, 10, 40, 40)];
+}
+
+#pragma mark - Keyboard Handling
+
+- (void)keyboardWillShow:(NSNotification *)notification {    
+    NSDictionary* info = [notification userInfo];
+    CGRect keyboardRect = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardRect = [[[CCDirector sharedDirector] view] convertRect:keyboardRect fromView:nil];
+    
+    int newY = keyboardRect.size.height + 0.5 * self.contentSize.height;
+    CCMoveTo *moveTo = [CCMoveTo actionWithDuration:.3f position:ccp(self.presentationPosition.x, newY)];
+    
+    int textFieldWidth = (int) (0.8 * self.contentSize.width);
+    int posX = self.presentationPosition.x - (textFieldWidth / 2);
+    CGPoint textFieldPosition = ccp(posX, newY - (self.contentSize.height/2) + self.textField.frame.size.height + 30 + VERTICAL_MARGIN + VERTICAL_MARGIN);
+    CGPoint textFieldPositionUI = [[CCDirector sharedDirector] convertToUI:textFieldPosition];
+    
+    [UIView animateWithDuration:.35f animations:^{
+        self.textField.frame = CGRectMake(textFieldPositionUI.x, textFieldPositionUI.y, self.textField.frame.size.width, self.textField.frame.size.height);
+    }];
+    
+    [self runAction:moveTo];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    CCMoveTo *moveTo = [CCMoveTo actionWithDuration:.3f position:ccp(self.presentationPosition.x, self.presentationPosition.y)];
+
+    int textFieldWidth = (int) (0.8 * self.contentSize.width);
+    int posX = self.presentationPosition.x - (textFieldWidth / 2);
+    CGPoint textFieldPosition = ccp(posX, self.presentationPosition.y - (self.contentSize.height/2) + self.textField.frame.size.height + 30 + VERTICAL_MARGIN + VERTICAL_MARGIN);
+    CGPoint textFieldPositionUI = [[CCDirector sharedDirector] convertToUI:textFieldPosition];
+    
+    [UIView animateWithDuration:.35f animations:^{
+        self.textField.frame = CGRectMake(textFieldPositionUI.x, textFieldPositionUI.y, self.textField.frame.size.width, self.textField.frame.size.height);
+    }];
+    
+    [self runAction:moveTo];
 }
 
 @end
