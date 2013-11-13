@@ -131,6 +131,12 @@
 		62753C4717C1211C005F379C /* PopupInputDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62753C4617C1211B005F379C /* PopupInputDemoLayer.m */; };
 		62A8F0F517F0AD190045B83E /* usernamepopup_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F0F317F0AD190045B83E /* usernamepopup_background.png */; };
 		62A8F0F617F0AD190045B83E /* usernamepopup_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F0F417F0AD190045B83E /* usernamepopup_button.png */; };
+		62C9A7361834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9A7311834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.m */; };
+		62C9A7371834140200C6030D /* CCSpriteBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9A7331834140200C6030D /* CCSpriteBackgroundNode.m */; };
+		62C9A7381834140200C6030D /* NotificationBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9A7351834140200C6030D /* NotificationBox.m */; };
+		62C9A73B1834142E00C6030D /* NotificationBoxDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9A73A1834142E00C6030D /* NotificationBoxDemoLayer.m */; };
+		62C9A73E1834169F00C6030D /* notification-box-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C9A73C1834169F00C6030D /* notification-box-hd.png */; };
+		62C9A73F1834169F00C6030D /* notification-box.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C9A73D1834169F00C6030D /* notification-box.png */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
 		DC1BE6A114F417CC00F49D25 /* Ubuntu-BI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68D14F417CC00F49D25 /* Ubuntu-BI.ttf */; };
 		DC1BE6A214F417CC00F49D25 /* Ubuntu-C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68E14F417CC00F49D25 /* Ubuntu-C.ttf */; };
@@ -350,6 +356,16 @@
 		62753C4617C1211B005F379C /* PopupInputDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupInputDemoLayer.m; sourceTree = "<group>"; };
 		62A8F0F317F0AD190045B83E /* usernamepopup_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usernamepopup_background.png; sourceTree = "<group>"; };
 		62A8F0F417F0AD190045B83E /* usernamepopup_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usernamepopup_button.png; sourceTree = "<group>"; };
+		62C9A7301834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCLabelTTF+adjustToFitRequiredSize.h"; sourceTree = "<group>"; };
+		62C9A7311834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCLabelTTF+adjustToFitRequiredSize.m"; sourceTree = "<group>"; };
+		62C9A7321834140200C6030D /* CCSpriteBackgroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpriteBackgroundNode.h; sourceTree = "<group>"; };
+		62C9A7331834140200C6030D /* CCSpriteBackgroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCSpriteBackgroundNode.m; sourceTree = "<group>"; };
+		62C9A7341834140200C6030D /* NotificationBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationBox.h; sourceTree = "<group>"; };
+		62C9A7351834140200C6030D /* NotificationBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBox.m; sourceTree = "<group>"; };
+		62C9A7391834142E00C6030D /* NotificationBoxDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationBoxDemoLayer.h; sourceTree = "<group>"; };
+		62C9A73A1834142E00C6030D /* NotificationBoxDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBoxDemoLayer.m; sourceTree = "<group>"; };
+		62C9A73C1834169F00C6030D /* notification-box-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box-hd.png"; sourceTree = "<group>"; };
+		62C9A73D1834169F00C6030D /* notification-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box.png"; sourceTree = "<group>"; };
 		DC1BE68614F417CC00F49D25 /* copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		DC1BE68914F417CC00F49D25 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-B.ttf"; sourceTree = "<group>"; };
@@ -558,6 +574,7 @@
 		623C478117B67ED5007A9679 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				62C9A72F1834140200C6030D /* NotificationBox */,
 				62753C2817C1050E005F379C /* Popup */,
 				62753C2117C0FE2F005F379C /* CCMenuBlocking */,
 				623C478217B67ED5007A9679 /* Leaderboard */,
@@ -572,6 +589,8 @@
 				62753C3017C10594005F379C /* PopupDemoLayer.m */,
 				62753C4517C1211A005F379C /* PopupInputDemoLayer.h */,
 				62753C4617C1211B005F379C /* PopupInputDemoLayer.m */,
+				62C9A7391834142E00C6030D /* NotificationBoxDemoLayer.h */,
+				62C9A73A1834142E00C6030D /* NotificationBoxDemoLayer.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -737,6 +756,21 @@
 				62753C3B17C1099C005F379C /* 9patch_whiteBackground.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		62C9A72F1834140200C6030D /* NotificationBox */ = {
+			isa = PBXGroup;
+			children = (
+				62C9A73C1834169F00C6030D /* notification-box-hd.png */,
+				62C9A73D1834169F00C6030D /* notification-box.png */,
+				62C9A7301834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.h */,
+				62C9A7311834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.m */,
+				62C9A7321834140200C6030D /* CCSpriteBackgroundNode.h */,
+				62C9A7331834140200C6030D /* CCSpriteBackgroundNode.m */,
+				62C9A7341834140200C6030D /* NotificationBox.h */,
+				62C9A7351834140200C6030D /* NotificationBox.m */,
+			);
+			path = NotificationBox;
 			sourceTree = "<group>";
 		};
 		DC1BE68414F417CC00F49D25 /* ubuntu-font-family-0.80 */ = {
@@ -1028,6 +1062,7 @@
 				623C473817B67DB9007A9679 /* hipmobsend_field@2x.png in Resources */,
 				623C473917B67DB9007A9679 /* mgwu-gk-notification.png in Resources */,
 				623C473A17B67DB9007A9679 /* mgwu-gk-notification@2x.png in Resources */,
+				62C9A73E1834169F00C6030D /* notification-box-hd.png in Resources */,
 				623C473B17B67DB9007A9679 /* mgwu-m.png in Resources */,
 				623C473C17B67DB9007A9679 /* mgwu-m@2x.png in Resources */,
 				623C473D17B67DB9007A9679 /* MGWUAboutFooter-Landscape-568h@2x~iphone.png in Resources */,
@@ -1039,6 +1074,7 @@
 				623C474317B67DB9007A9679 /* MGWUAboutFooter-Portrait@2x~iphone.png in Resources */,
 				623C474417B67DB9007A9679 /* MGWUAboutFooter-Portrait~ipad.png in Resources */,
 				623C474517B67DB9007A9679 /* MGWUAboutFooter-Portrait~iphone.png in Resources */,
+				62C9A73F1834169F00C6030D /* notification-box.png in Resources */,
 				623C474617B67DB9007A9679 /* MGWUBackground-Landscape@2x~ipad.png in Resources */,
 				623C474717B67DB9007A9679 /* MGWUBackground-Landscape@2x~iphone.png in Resources */,
 				623C474817B67DB9007A9679 /* MGWUBackground-Landscape~ipad.png in Resources */,
@@ -1119,11 +1155,13 @@
 				DCC1A3A913A94F1A005BD75D /* AppDelegate.m in Sources */,
 				DCC1A3AB13A94F1A005BD75D /* MainMenuLayer.m in Sources */,
 				DCC1A3AD13A94F1A005BD75D /* main.m in Sources */,
+				62C9A7381834140200C6030D /* NotificationBox.m in Sources */,
 				623C478E17B67ED5007A9679 /* LeaderboardLayer.m in Sources */,
 				623C479517B67ED5007A9679 /* ScoreboardEntryNode.m in Sources */,
 				62753C0917C0D096005F379C /* CCControl.m in Sources */,
 				62753C0A17C0D096005F379C /* CCControlButton.m in Sources */,
 				62753C0B17C0D096005F379C /* CCControlColourPicker.m in Sources */,
+				62C9A73B1834142E00C6030D /* NotificationBoxDemoLayer.m in Sources */,
 				62753C0C17C0D096005F379C /* CCControlPotentiometer.m in Sources */,
 				62753C0D17C0D096005F379C /* CCControlSlider.m in Sources */,
 				62753C0E17C0D096005F379C /* CCControlStepper.m in Sources */,
@@ -1138,6 +1176,8 @@
 				62753C1917C0D096005F379C /* SWTableView.m in Sources */,
 				62753C1A17C0D096005F379C /* SWTableViewCell.m in Sources */,
 				62753C1D17C0DD18005F379C /* LeaderboardDemoLayer.m in Sources */,
+				62C9A7371834140200C6030D /* CCSpriteBackgroundNode.m in Sources */,
+				62C9A7361834140200C6030D /* CCLabelTTF+adjustToFitRequiredSize.m in Sources */,
 				62753C2017C0DD2D005F379C /* ScoreboardDemoLayer.m in Sources */,
 				62753C2417C0FE2F005F379C /* CCMenuBlocking.m in Sources */,
 				62753C2717C0FE53005F379C /* CCMenuBlockingDemoLayer.m in Sources */,

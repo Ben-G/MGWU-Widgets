@@ -14,6 +14,7 @@
 #import "CCMenuBlockingDemoLayer.h"
 #import "PopupDemoLayer.h"
 #import "PopupInputDemoLayer.h"
+#import "NotificationBoxDemoLayer.h"
 
 @interface MainMenuLayer (PrivateMethods)
 @end
@@ -42,7 +43,10 @@
         CCLabelTTF *inputPopupLabel = [CCLabelTTF labelWithString:@"Input Popup" fontName:@"Arial" fontSize:14];
         CCMenuItem *inputPopupItem = [CCMenuItemLabel itemWithLabel:inputPopupLabel target:self selector:@selector(presentInputPopup)];
         
-        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, nil];
+        CCLabelTTF *notificationBoxLabel = [CCLabelTTF labelWithString:@"Notification" fontName:@"Arial" fontSize:14];
+        CCMenuItem *notificationBoxItem = [CCMenuItemLabel itemWithLabel:notificationBoxLabel target:self selector:@selector(presentNotificationBox)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, notificationBoxItem, nil];
         menu.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
         
         [menu alignItemsVertically];
@@ -76,6 +80,11 @@
 - (void)presentInputPopup
 {
     [[CCDirector sharedDirector] pushScene:(CCScene *)[[PopupInputDemoLayer alloc] init]];
+}
+
+- (void)presentNotificationBox
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[NotificationBoxDemoLayer alloc] init]];
 }
 
 @end
