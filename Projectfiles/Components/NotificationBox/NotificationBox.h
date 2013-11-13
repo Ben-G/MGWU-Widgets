@@ -13,6 +13,13 @@
     CCLabelTTF *contentLabel;
 }
 
+/*
+ Helper method to simply display a notification box. Creates a notification, sets the text and displays and hides the notification automatically.
+ */
++ (void)presentNotificationBoxOnNode:(CCNode *)parentNode withText:(NSString *)text duration:(NSTimeInterval)duration;
+
+
+
 /* 
  Sets a text displayed in the notification box
  */
@@ -28,10 +35,5 @@
  Tells the notification box to hide itself. Usually there is no need to call this method, since it is autmatically called internally.
  */
 - (void)hide;
-
-/*
- Helper method to simply display a notification box. Creates a notification, sets the text and displays and hides the notification automatically.
- */
-+ (void)presentNotificationBoxOnNode:(CCNode *)parentNode withText:(NSString *)text duration:(NSTimeInterval)duration;
 
 @end
