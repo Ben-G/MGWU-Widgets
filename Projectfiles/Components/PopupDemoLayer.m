@@ -42,9 +42,9 @@
     popup = [PopUp showWithMessage:popUpMessage okButtonTitle:@"OK" otherButtonTitles:nil  target:self selector:@selector(popUpButtonClicked:)];
 }
 
-- (void)popUpButtonClicked:(CCControlButton *)sender
+- (void)popUpButtonClicked:(int)buttonIndex
 {
-    if (sender.tag == OK_BUTTON_INDEX)
+    if (buttonIndex == OK_BUTTON_INDEX)
     {
         // OK button selected
         [popup dismiss];

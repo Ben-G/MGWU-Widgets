@@ -16,7 +16,11 @@
 
 @interface PopUp()
 
+@property (nonatomic, weak) id target;
+@property (nonatomic, assign) SEL selector;
 @property (nonatomic, assign) CGPoint presentationPosition;
+
+- (void)buttonSelected:(CCControlButton*)button;
 
 @end
 
@@ -50,6 +54,18 @@
     [self removeFromParent];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - Callback Handling
+
+- (void)buttonSelected:(CCControlButton*)button {
+    int buttonTag = button.tag;
+    
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self.target methodSignatureForSelector:self.selector]];
+    [invocation setSelector:self.selector];
+    [invocation setTarget:self.target];
+    [invocation setArgument:&buttonTag atIndex:2];
+    [invocation invoke];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -281,7 +297,12 @@
         popUpButton.anchorPoint = ccp(0, 0);
         popUpButton.preferredSize = CGSizeMake(buttonSize, BUTTON_HEIGHT);
         popUpButton.position = ccp(xPos, VERTICAL_MARGIN);
-        [popUpButton addTarget:target action:selector forControlEvents:CCControlEventTouchUpInside];
+        [popUpButton addTarget:popUp action:@selector(buttonSelected:) forControlEvents:CCControlEventTouchUpInside];
+        
+        // store target and selector in Popup
+        popUp.target = target;
+        popUp.selector = selector;
+        
         // set the tag to the index of the button
      
         if ([currentButtonTitle isEqualToString:okButtonTitle]) {

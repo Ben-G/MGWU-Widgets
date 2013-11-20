@@ -69,9 +69,9 @@
     popup = [PopUp showWithMessage:popUpMessage okButtonTitle:@"Send" otherButtonTitles:@[@"Don't send"] backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
 }
 
-- (void)popUpButtonClicked:(CCControlButton *)sender
+- (void)popUpButtonClicked:(int)buttonIndex
 {
-    if (sender.tag == OK_BUTTON_INDEX)
+    if (buttonIndex == OK_BUTTON_INDEX)
     {
         // OK button selected
         contentLabel.string = [popup textFieldText];

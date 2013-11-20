@@ -13,15 +13,35 @@
 
 #define OK_BUTTON_INDEX -1
 
+/**
+ A cocos2D Popup similar to UIAlertView.
+ */
+
 @interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate>
 
 - (void)dismiss;
 - (NSString *)textFieldText;
 
-/** analogous to UIAlertViewDelegate, this popup will call the selector on the target. The CCControllButton which is seleced, is passed to the selector as the "sender". The tag of that CCControlButton matches the index of the button title*/
+/** 
+    Shows a popup on the currently running scene.
+    The selector should be implemented this way:
+    @code
+ - (void)popUpButtonClicked:(int)buttonIndex
+ {
+    if (buttonIndex == OK_BUTTON_INDEX)
+    {
+    // OK button selected
+    contentLabel.string = [popup textFieldText];
+    }
+ }
+    @endcode
+ 
+ All button indexes will be in the order of the provided buttonTitles.
+ */
 + (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButonTitles target:(id)target selector:(SEL)selector;
 
-/** Popup with input field. Value of inputField can be accessed over 'textFieldText' property of the popup */
+/**
+ Popup with input field. Value of inputField can be accessed over 'textFieldText' property of the popup */
 + (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButonTitles target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField;
 
 
