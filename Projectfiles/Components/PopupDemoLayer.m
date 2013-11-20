@@ -39,12 +39,12 @@
 - (void)showPopup
 {
     NSString *popUpMessage = @"Demo Popup !\n multiline \n autosize!";
-    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK"] target:self selector:@selector(popUpButtonClicked:)];
+    popup = [PopUp showWithMessage:popUpMessage okButtonTitle:@"OK" otherButtonTitles:nil  target:self selector:@selector(popUpButtonClicked:)];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender
 {
-    if (sender.tag == 0)
+    if (sender.tag == OK_BUTTON_INDEX)
     {
         // OK button selected
         [popup dismiss];

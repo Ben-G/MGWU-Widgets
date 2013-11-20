@@ -56,7 +56,7 @@
 - (void)showPopup
 {
     NSString *popUpMessage = @"Enter your name: \n Second Line Test";
-    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"OK", @"Cancel"] target:self selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
+    popup = [PopUp showWithMessage:popUpMessage okButtonTitle:@"Ok" otherButtonTitles:@[@"Cancel"] target:self selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
     
     /* INFO: There are many overloaded methods that allow to create a popup. In the most simple one, you do not need to provide
        a custom size or a custom position! */
@@ -66,12 +66,12 @@
 {
     NSString *popUpMessage = @"Demo Popup!";
     
-    popup = [PopUp showWithMessage:popUpMessage buttons:@[@"Send", @"Don't Send"] backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
+    popup = [PopUp showWithMessage:popUpMessage okButtonTitle:@"Send" otherButtonTitles:@[@"Don't send"] backgroundImage:@"usernamepopup_background.png" buttonImage:@"usernamepopup_button.png" target:self  selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
 }
 
 - (void)popUpButtonClicked:(CCControlButton *)sender
 {
-    if (sender.tag == 0)
+    if (sender.tag == OK_BUTTON_INDEX)
     {
         // OK button selected
         contentLabel.string = [popup textFieldText];

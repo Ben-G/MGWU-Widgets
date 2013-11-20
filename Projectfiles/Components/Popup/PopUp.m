@@ -122,60 +122,66 @@
 #define WHITE_FONT_COLOR ccc3(255, 255, 255)
 #define DEFAULT_FONT @"Avenir-Black"
 
-#define DEFAULT_BUTTON_IMAGE @"9patch_whiteBackground.png"
-#define DEFAULT_BACKGROUND_IMAGE @"9patch_whiteBackground.png"
+#define DEFAULT_BUTTON_IMAGE @"button.png"
+#define DEFAULT_OK_BUTTON_IMAGE @"okbutton.png"
+#define DEFAULT_BACKGROUND_IMAGE @"background.png"
 
 #define VERTICAL_MARGIN 10
 #define BUTTON_HEIGHT 30
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles target:(id)target selector:(SEL)selector
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles target:(id)target selector:(SEL)selector
 {
-    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:FALSE size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:FALSE size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField
 {
-    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:showsInputField size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:showsInputField size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField size:(CGSize)size target:(id)target selector:(SEL)selector
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles showsInputField:(BOOL)showsInputField size:(CGSize)size target:(id)target selector:(SEL)selector
 {
-    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:showsInputField size:size atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:showsInputField size:size atPosition:CGPointZero backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField size:(CGSize)size atPosition:(CGPoint)position target:(id)target selector:(SEL)selector {
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles showsInputField:(BOOL)showsInputField size:(CGSize)size atPosition:(CGPoint)position target:(id)target selector:(SEL)selector {
     
-    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:showsInputField size:size atPosition:position backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:showsInputField size:size atPosition:position backgroundImage:DEFAULT_BACKGROUND_IMAGE buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles size:(CGSize)size backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector {
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles size:(CGSize)size backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector {
     CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
     
-    return [PopUp showWithMessage:message buttons:buttonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector {
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector {
     CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
     
-    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:FALSE size:backgroundImageSprite.contentSize atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:FALSE size:backgroundImageSprite.contentSize atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:DEFAULT_BUTTON_IMAGE target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector {
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector {
     CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
     
-    return [PopUp showWithMessage:message buttons:buttonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField {
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector showsInputField:(BOOL)showsInputField {
 
-    return [PopUp showWithMessage:message buttons:buttonTitles showsInputField:showsInputField size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:buttonImage target:target selector:selector];
+    return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:showsInputField size:AUTOSIZING_CONTENT_SIZE atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:buttonImage target:target selector:selector];
 }
 
-+ (PopUp *)showWithMessage:(NSString *)message buttons:(NSArray*)buttonTitles showsInputField:(BOOL)showsInputField
++ (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles showsInputField:(BOOL)showsInputField
  size:(CGSize)size atPosition:(CGPoint)position backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector {
+    
     // create a popup with a content size
     PopUp *popUp = [PopUp node];
     popUp.contentSize = size;
+    
+    NSMutableArray *buttonTitles = [[NSMutableArray alloc] init];
+    [buttonTitles addObjectsFromArray:otherButtonTitles];
+    [buttonTitles addObject:okButtonTitle];
     
     // defines if this popup shall autosize
     BOOL autosizing = FALSE;
@@ -247,20 +253,26 @@
     // add one button for each button title
     for (unsigned int i = 0; i < [buttonTitles count]; i++)
     {
-        // add a login button for the user
+        NSString *currentButtonTitle = buttonTitles[i];
+        
         CCScale9Sprite *buttonBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:buttonImage];
         
         CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:buttonBackgroundSprite];
         [popUpButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
         [popUpButton setTitleTTFSize:16 forState:CCControlStateNormal];
         [popUpButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];
-        [popUpButton setTitle:[buttonTitles objectAtIndex:i] forState:CCControlStateNormal];
+        [popUpButton setTitle:currentButtonTitle forState:CCControlStateNormal];
         popUpButton.anchorPoint = ccp(0, 0);
         popUpButton.preferredSize = CGSizeMake(buttonSize, BUTTON_HEIGHT);
         popUpButton.position = ccp(xPos, VERTICAL_MARGIN);
         [popUpButton addTarget:target action:selector forControlEvents:CCControlEventTouchUpInside];
         // set the tag to the index of the button
-        popUpButton.tag = i;
+     
+        if ([currentButtonTitle isEqualToString:okButtonTitle]) {
+            popUpButton.tag = OK_BUTTON_INDEX;
+        } else {
+            popUpButton.tag = i;
+        }
         
         [popUp addChild:popUpButton];
         [buttons addObject:popUpButton];
@@ -321,7 +333,7 @@
 
 + (CCScale9Sprite *)scaleSpriteWhiteBackgroundSolidBlackBorder
 {
-    return  [[CCScale9Sprite alloc] initWithFile:@"9patch_whiteBackground.png" capInsets:CGRectMake(10, 10, 40, 40)];
+    return  [[CCScale9Sprite alloc] initWithFile:@"background.png" capInsets:CGRectMake(10, 10, 40, 40)];
 }
 
 - (CGPoint)calculateTextFieldPosition:(int)yPosition {
