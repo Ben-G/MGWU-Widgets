@@ -24,10 +24,10 @@
  *
  */
 
-#import "CCControlSlider.h"
-#import "ARCMacro.h"
+#import "MGWUCCControlSlider.h"
+#import "MGWUARCMacro.h"
 
-@interface CCControlSlider ()
+@interface MGWUCCControlSlider ()
 @property (nonatomic, strong) CCSprite  *thumbSprite;
 @property (nonatomic, strong) CCSprite  *progressSprite;
 @property (nonatomic, strong) CCSprite  *backgroundSprite;
@@ -46,7 +46,7 @@
 
 @end
 
-@implementation CCControlSlider
+@implementation MGWUCCControlSlider
 @synthesize thumbSprite         = _thumbSprite;
 @synthesize progressSprite      = _progressSprite;
 @synthesize backgroundSprite    = _backgroundSprite;

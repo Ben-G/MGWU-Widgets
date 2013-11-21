@@ -27,9 +27,9 @@
  *
  */
 
-#import "CCColourUtils.h"
+#import "MGWUCCColourUtils.h"
 
-@implementation CCColourUtils
+@implementation MGWUCCColourUtils
 
 #pragma mark - Initialization
 

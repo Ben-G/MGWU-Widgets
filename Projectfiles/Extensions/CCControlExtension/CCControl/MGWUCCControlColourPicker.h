@@ -28,8 +28,8 @@
  */
 
 
-#import "CCControl.h"
-#import "CCColourUtils.h"
+#import "MGWUCCControl.h"
+#import "MGWUCCColourUtils.h"
 
 /** Defines the possible arrow directions. */
 typedef enum
@@ -51,7 +51,7 @@ typedef enum
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControlColourPicker.html
  */
-@interface CCControlColourPicker : CCControl
+@interface MGWUCCControlColourPicker : MGWUCCControl
 {
 @public
     CCSprite                            *_arrow;

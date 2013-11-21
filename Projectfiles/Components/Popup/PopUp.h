@@ -8,8 +8,8 @@
 //
 
 #import "CCNode.h"
-#import "CCControlButton.h"
-#import "CCNinePatchBackgroundNode.h"
+#import "MGWUCCControlButton.h"
+#import "MGWUCCNinePatchBackgroundNode.h"
 
 #define OK_BUTTON_INDEX -1
 
@@ -17,7 +17,7 @@
  A cocos2D Popup similar to UIAlertView.
  */
 
-@interface PopUp : CCNinePatchBackgroundNode <CCTouchOneByOneDelegate>
+@interface PopUp : MGWUCCNinePatchBackgroundNode <CCTouchOneByOneDelegate>
 
 - (void)dismiss;
 - (NSString *)textFieldText;

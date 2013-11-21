@@ -24,10 +24,10 @@
  *
  */
 
-#import "CCControlPotentiometer.h"
-#import "ARCMacro.h"
+#import "MGWUCCControlPotentiometer.h"
+#import "MGWUARCMacro.h"
 
-@interface CCControlPotentiometer () 
+@interface MGWUCCControlPotentiometer () 
 @property (nonatomic, strong) CCSprite          *thumbSprite;
 @property (nonatomic, strong) CCProgressTimer   *progressTimer;
 @property (nonatomic, assign) CGPoint           previousLocation;
@@ -51,7 +51,7 @@
 
 @end
 
-@implementation CCControlPotentiometer
+@implementation MGWUCCControlPotentiometer
 @synthesize value               = _value;
 @synthesize minimumValue        = _minimumValue;
 @synthesize maximumValue        = _maximumValue;

@@ -4,8 +4,8 @@
 // Creates a 9-slice sprite.
 //
 
-#import "CCScale9Sprite.h"
-#import "ARCMacro.h"
+#import "MGWUCCScale9Sprite.h"
+#import "MGWUARCMacro.h"
 
 enum positions
 {
@@ -20,7 +20,7 @@ enum positions
     pBottomLeft
 };
 
-@interface CCScale9Sprite ()
+@interface MGWUCCScale9Sprite ()
 
 - (id)initWithBatchNode:(CCSpriteBatchNode *)batchnode rect:(CGRect)rect capInsets:(CGRect)capInsets;
 - (void)updateWithBatchNode:(CCSpriteBatchNode*)batchnode rect:(CGRect)rect rotated:(BOOL)rotated capInsets:(CGRect)capInsets;
@@ -28,7 +28,7 @@ enum positions
 
 @end
 
-@implementation CCScale9Sprite
+@implementation MGWUCCScale9Sprite
 @synthesize originalSize            = _originalSize;
 @synthesize capInsets               = _capInsets;
 @synthesize insetTop                = _insetTop;
@@ -662,9 +662,9 @@ enum positions
 #pragma mark -
 #pragma mark CCScale9Sprite Public Methods
 
-- (CCScale9Sprite *)resizableSpriteWithCapInsets:(CGRect)capInsets
+- (MGWUCCScale9Sprite *)resizableSpriteWithCapInsets:(CGRect)capInsets
 {
-    return SAFE_ARC_AUTORELEASE([[CCScale9Sprite alloc] initWithBatchNode:_scale9Image rect:_spriteRect capInsets:capInsets]);
+    return SAFE_ARC_AUTORELEASE([[MGWUCCScale9Sprite alloc] initWithBatchNode:_scale9Image rect:_spriteRect capInsets:capInsets]);
 }
 
 #pragma mark -

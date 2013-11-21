@@ -9,7 +9,7 @@
 
 #import "PopUp.h"
 #import "PopUpProtected.h"
-#import "CCControlButton.h"
+#import "MGWUCCControlButton.h"
 
 #define KEYBOARD_HEIGHT_LANDSCAPE 162
 #define KEYBOARD_HEIGHT_PORTRAIT  216
@@ -20,7 +20,7 @@
 @property (nonatomic, assign) SEL selector;
 @property (nonatomic, assign) CGPoint presentationPosition;
 
-- (void)buttonSelected:(CCControlButton*)button;
+- (void)buttonSelected:(MGWUCCControlButton*)button;
 
 @end
 
@@ -58,7 +58,7 @@
 
 #pragma mark - Callback Handling
 
-- (void)buttonSelected:(CCControlButton*)button {
+- (void)buttonSelected:(MGWUCCControlButton*)button {
     int buttonTag = button.tag;
     
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self.target methodSignatureForSelector:self.selector]];
@@ -166,19 +166,19 @@
 }
 
 + (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles size:(CGSize)size backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector {
-    CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
+    MGWUCCScale9Sprite *backgroundImageSprite = [[MGWUCCScale9Sprite alloc] initWithFile:backgroundImage];
     
     return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
 }
 
 + (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles backgroundImage:(NSString *)backgroundImage target:(id)target selector:(SEL)selector {
-    CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
+    MGWUCCScale9Sprite *backgroundImageSprite = [[MGWUCCScale9Sprite alloc] initWithFile:backgroundImage];
     
     return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles showsInputField:FALSE size:backgroundImageSprite.contentSize atPosition:CGPointZero backgroundImage:backgroundImage buttonImage:nil target:target selector:selector];
 }
 
 + (PopUp *)showWithMessage:(NSString *)message okButtonTitle:(NSString*)okButtonTitle otherButtonTitles:(NSArray*)otherButtonTitles backgroundImage:(NSString *)backgroundImage buttonImage:(NSString *)buttonImage target:(id)target selector:(SEL)selector {
-    CCScale9Sprite *backgroundImageSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
+    MGWUCCScale9Sprite *backgroundImageSprite = [[MGWUCCScale9Sprite alloc] initWithFile:backgroundImage];
     
     return [PopUp showWithMessage:message okButtonTitle:okButtonTitle otherButtonTitles:otherButtonTitles size:backgroundImageSprite.contentSize backgroundImage:backgroundImage target:target selector:selector];
 }
@@ -207,7 +207,7 @@
         autosizing = TRUE;
     }
     
-    popUp.backgroundScaleSprite = [[CCScale9Sprite alloc] initWithFile:backgroundImage];
+    popUp.backgroundScaleSprite = [[MGWUCCScale9Sprite alloc] initWithFile:backgroundImage];
     
     CCNode *parentNode = [[CCDirector sharedDirector] runningScene];
     CGPoint presentationPosition;
@@ -271,25 +271,25 @@
     {
         NSString *currentButtonTitle = buttonTitles[i];
         
-        CCScale9Sprite *buttonBackgroundSprite = nil;
+        MGWUCCScale9Sprite *buttonBackgroundSprite = nil;
         ccColor3B buttonFontColor = DEFAULT_FONT_COLOR;
         
         if ([currentButtonTitle isEqualToString:okButtonTitle]) {
             if (buttonImage == nil) {
-                buttonBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:DEFAULT_OK_BUTTON_IMAGE];
+                buttonBackgroundSprite = [[MGWUCCScale9Sprite alloc] initWithFile:DEFAULT_OK_BUTTON_IMAGE];
                 buttonFontColor = ccc3(255, 255, 255);
             } else {
-                buttonBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:buttonImage];
+                buttonBackgroundSprite = [[MGWUCCScale9Sprite alloc] initWithFile:buttonImage];
             }
         } else {
             if (buttonImage == nil) {
-                buttonBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:DEFAULT_BUTTON_IMAGE];
+                buttonBackgroundSprite = [[MGWUCCScale9Sprite alloc] initWithFile:DEFAULT_BUTTON_IMAGE];
             } else {
-                buttonBackgroundSprite = [[CCScale9Sprite alloc] initWithFile:buttonImage];
+                buttonBackgroundSprite = [[MGWUCCScale9Sprite alloc] initWithFile:buttonImage];
             }
         }
         
-        CCControlButton *popUpButton = [[CCControlButton alloc] initWithBackgroundSprite:buttonBackgroundSprite];
+        MGWUCCControlButton *popUpButton = [[MGWUCCControlButton alloc] initWithBackgroundSprite:buttonBackgroundSprite];
         [popUpButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
         [popUpButton setTitleTTFSize:16 forState:CCControlStateNormal];
         [popUpButton setTitleColor:buttonFontColor forState:CCControlStateNormal];
@@ -370,9 +370,9 @@
 
 #pragma mark - Helpers
 
-+ (CCScale9Sprite *)scaleSpriteWhiteBackgroundSolidBlackBorder
++ (MGWUCCScale9Sprite *)scaleSpriteWhiteBackgroundSolidBlackBorder
 {
-    return  [[CCScale9Sprite alloc] initWithFile:@"background.png" capInsets:CGRectMake(10, 10, 40, 40)];
+    return  [[MGWUCCScale9Sprite alloc] initWithFile:@"background.png" capInsets:CGRectMake(10, 10, 40, 40)];
 }
 
 - (CGPoint)calculateTextFieldPosition:(int)yPosition {

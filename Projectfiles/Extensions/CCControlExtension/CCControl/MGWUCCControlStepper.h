@@ -24,7 +24,7 @@
  *
  */
 
-#import "CCControl.h"
+#import "MGWUCCControl.h"
 
 typedef enum
 {
@@ -48,7 +48,7 @@ typedef enum
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControlStepper.html
  */
-@interface CCControlStepper : CCControl
+@interface MGWUCCControlStepper : MGWUCCControl
 {
 @public
     double                  _value;

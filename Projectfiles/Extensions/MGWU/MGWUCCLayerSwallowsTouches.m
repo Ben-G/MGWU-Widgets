@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "CCLayerSwallowsTouches.h"
+#import "MGWUCCLayerSwallowsTouches.h"
 
-@implementation CCLayerSwallowsTouches
+@implementation MGWUCCLayerSwallowsTouches
 
 - (void)onEnter
 {

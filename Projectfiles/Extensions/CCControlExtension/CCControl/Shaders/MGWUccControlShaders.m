@@ -24,7 +24,7 @@
  *
  */
 
-#import "ccControlShaders.h"
+#import "MGWUccControlShaders.h"
 
 const GLchar * ccControlSwitchMask_frag =
-#import "ccShader_ControlSwitchMask_frag.h"
+#import "MGWUccShader_ControlSwitchMask_frag.h"

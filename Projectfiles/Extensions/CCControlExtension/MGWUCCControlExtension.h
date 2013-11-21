@@ -1,10 +1,7 @@
 /*
- * ColourUtils.h
+ * CCControlExtension.h
  *
- * Copyright 2012 Stewart Hamilton-Arrandale.
- * http://creativewax.co.uk
- *
- * Modified by Yannick Loriot.
+ * Copyright 2012 Yannick Loriot.
  * http://yannickloriot.com
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,30 +24,18 @@
  *
  */
 
-#import <Foundation/Foundation.h>
+#ifndef MGWUCCControlExtension_h
+#define MGWUCCControlExtension_h
 
-typedef struct
-{
-    double r;       // percent
-    double g;       // percent
-    double b;       // percent
-    double a;       // percent
-} RGBA;
+#import "MGWUCCScale9Sprite.h"
 
-typedef struct
-{
-    double h;       // angle in degrees
-    double s;       // percent
-    double v;       // percent
-} HSV;
+#import "MGWUCCControl.h"
+#import "MGWUCCControlButton.h"
+#import "MGWUCCControlColourPicker.h"
+#import "MGWUCCControlPicker.h"
+#import "MGWUCCControlPotentiometer.h"
+#import "MGWUCCControlSlider.h"
+#import "MGWUCCControlStepper.h"
+#import "MGWUCCControlSwitch.h"
 
-@interface CCColourUtils : NSObject
-
-#pragma mark - Constuctors - Initializers
-
-#pragma mark - Public Methods
-
-+ (HSV)HSVfromRGB:(RGBA)value;
-+ (RGBA)RGBfromHSV:(HSV)value;
-
-@end
+#endif

@@ -24,14 +24,14 @@
  *
  */
 
-#import "CCControl.h"
+#import "MGWUCCControl.h"
 
 /** Define the button margin for Left/Right edge */
 #define CCControlButtonMarginLR 8 // px
 /** Define the button margin for Top/Bottom edge */
 #define CCControlButtonMarginTB 2 // px
 
-@class CCScale9Sprite;
+@class MGWUCCScale9Sprite;
 
 /**
  * Button control for Cocos2D.
@@ -42,7 +42,7 @@
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControlButton.html
  */
-@interface CCControlButton : CCControl
+@interface MGWUCCControlButton : MGWUCCControl
 {
 @public    
     BOOL                                    _adjustBackgroundImage;
@@ -52,7 +52,7 @@
     NSString                                *_currentTitle;
     ccColor3B                               _currentTitleColor;
     CCNode<CCLabelProtocol, CCRGBAProtocol> *_titleLabel;
-    CCScale9Sprite                          *_backgroundSprite;
+    MGWUCCScale9Sprite                          *_backgroundSprite;
     CGSize                                  _preferredSize;
     
 @protected
@@ -74,7 +74,7 @@
 /** The current title label. */
 @property (nonatomic, strong) CCNode<CCLabelProtocol,CCRGBAProtocol> *titleLabel;
 /** The current background sprite. */
-@property (nonatomic, strong) CCScale9Sprite *backgroundSprite;
+@property (nonatomic, strong) MGWUCCScale9Sprite *backgroundSprite;
 /** The preferred size of the button, if label is larger it will be expanded. */
 @property (nonatomic, assign) CGSize preferredSize;
 /** Scale the button up when it is touched, default is YES. */
@@ -93,13 +93,13 @@
  * @param label            label, that is used as a foreground title.
  * @param backgroundsprite CCScale9Sprite, that is used as a background.
  */
-- (id)initWithLabel:(CCNode<CCLabelProtocol, CCRGBAProtocol> *)label backgroundSprite:(CCScale9Sprite *)backgroundsprite;
+- (id)initWithLabel:(CCNode<CCLabelProtocol, CCRGBAProtocol> *)label backgroundSprite:(MGWUCCScale9Sprite *)backgroundsprite;
 
 /**
  * Creates a button with a label in foreground and a sprite in background.
  * @see initWithLabel:backgroundSprite:
  */
-+ (id)buttonWithLabel:(CCNode<CCLabelProtocol, CCRGBAProtocol> *)label backgroundSprite:(CCScale9Sprite *)backgroundsprite;
++ (id)buttonWithLabel:(CCNode<CCLabelProtocol, CCRGBAProtocol> *)label backgroundSprite:(MGWUCCScale9Sprite *)backgroundsprite;
 
 /**
  * Initializes a button with a title, a font name and a font size for the label in foreground.
@@ -119,13 +119,13 @@
  * Initializes a button with a sprite in background.
  * @param backgroundsprite CCScale9Sprite, that is used as a background.
  */
-- (id)initWithBackgroundSprite:(CCScale9Sprite *)backgroundsprite;
+- (id)initWithBackgroundSprite:(MGWUCCScale9Sprite *)backgroundsprite;
 
 /**
  * Creates a button with a sprite in background.
  * @see initWithBackgroundSprite:
  */
-+ (id)buttonWithBackgroundSprite:(CCScale9Sprite *)backgroundsprite;
++ (id)buttonWithBackgroundSprite:(MGWUCCScale9Sprite *)backgroundsprite;
 
 #pragma mark - Public Methods
 
@@ -246,7 +246,7 @@
  * @param state The state that uses the background sprite. Possible values are
  * described in "CCControlState".
  */
-- (CCScale9Sprite *)backgroundSpriteForState:(CCControlState)state;
+- (MGWUCCScale9Sprite *)backgroundSpriteForState:(CCControlState)state;
 
 /**
  * Sets the background sprite to use for the specified button state.
@@ -255,7 +255,7 @@
  * @param state The state that uses the specified image. The values are described
  * in "CCControlState".
  */
-- (void)setBackgroundSprite:(CCScale9Sprite *)sprite forState:(CCControlState)state;
+- (void)setBackgroundSprite:(MGWUCCScale9Sprite *)sprite forState:(CCControlState)state;
 
 /**
  * Sets the background spriteFrame to use for the specified button state.

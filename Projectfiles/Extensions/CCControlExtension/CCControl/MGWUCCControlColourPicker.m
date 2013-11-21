@@ -27,14 +27,14 @@
  *
  */
 
-#import "CCControlColourPicker.h"
+#import "MGWUCCControlColourPicker.h"
 
-#import "ARCMacro.h"
+#import "MGWUARCMacro.h"
 
 #pragma mark -
 #pragma mark - CCControlHuePicker Interface
 
-@interface CCControlHuePicker : CCControl
+@interface CCControlHuePicker : MGWUCCControl
 /** Contains the receiver’s current hue value (between 0 and 360 degree). */
 @property (nonatomic, assign) CGFloat   hue;
 /** Contains the receiver’s current hue value (between 0 and 1). */
@@ -57,7 +57,7 @@
 #pragma mark -
 #pragma mark - CCControlSaturationBrightnessPicker Interface
 
-@interface CCControlSaturationBrightnessPicker : CCControl
+@interface CCControlSaturationBrightnessPicker : MGWUCCControl
 /** Contains the receiver’s current saturation value. */
 @property (nonatomic, assign) CGFloat   saturation;
 /** Contains the receiver’s current brightness value. */
@@ -81,7 +81,7 @@
 #pragma mark -
 #pragma mark - CCControlColourPicker
 
-@interface CCControlColourPicker ()
+@interface MGWUCCControlColourPicker ()
 @property (nonatomic, assign) HSV                                   hsv;
 @property (nonatomic, strong) CCControlSaturationBrightnessPicker   *colourPicker;
 @property (nonatomic, strong) CCControlHuePicker                    *huePicker;
@@ -92,7 +92,7 @@
 
 @end
 
-@implementation CCControlColourPicker
+@implementation MGWUCCControlColourPicker
 @synthesize hsv             = _hsv;
 @synthesize colourPicker    = _colourPicker;
 @synthesize huePicker       = _huePicker;
@@ -186,7 +186,7 @@
     rgba.b      = color.b / 255.0f;
     rgba.a      = 1.0f;
     
-    _hsv        = [CCColourUtils HSVfromRGB:rgba];
+    _hsv        = [MGWUCCColourUtils HSVfromRGB:rgba];
 
     [self updateHueAndControlPicker];
 }
@@ -274,7 +274,7 @@
     _hsv.h      = sender.hue;
 
     // Update the value
-    RGBA rgb    = [CCColourUtils RGBfromHSV:_hsv];
+    RGBA rgb    = [MGWUCCColourUtils RGBfromHSV:_hsv];
     _color      = ccc3(rgb.r * 255.0f, rgb.g * 255.0f, rgb.b * 255.0f);
     
 	// Send CCControl callback
@@ -288,7 +288,7 @@
     _hsv.v      = sender.brightness;
 
     // Update the value
-    RGBA rgb    = [CCColourUtils RGBfromHSV:_hsv];
+    RGBA rgb    = [MGWUCCColourUtils RGBfromHSV:_hsv];
     _color      = ccc3(rgb.r * 255.0f, rgb.g * 255.0f, rgb.b * 255.0f);
     
     // Send CCControl callback
@@ -549,7 +549,7 @@
     hsvTemp.h           = hsv.h;
     hsvTemp.v           = 1;
     
-    RGBA rgb            = [CCColourUtils RGBfromHSV:hsvTemp];
+    RGBA rgb            = [MGWUCCColourUtils RGBfromHSV:hsvTemp];
     
     _background.color   = ccc3(rgb.r * 255.0f, rgb.g * 255.0f, rgb.b * 255.0f);
 }

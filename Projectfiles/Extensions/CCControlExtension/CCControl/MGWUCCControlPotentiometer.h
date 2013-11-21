@@ -24,7 +24,7 @@
  *
  */
 
-#import "CCControl.h"
+#import "MGWUCCControl.h"
 
 /** 
  * Potentiometer control for Cocos2D.
@@ -36,7 +36,7 @@
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControlPotentiometer.html
  */
-@interface CCControlPotentiometer : CCControl
+@interface MGWUCCControlPotentiometer : MGWUCCControl
 {
 @public
     float           _value;

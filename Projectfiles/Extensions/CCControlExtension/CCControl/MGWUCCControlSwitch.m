@@ -24,9 +24,9 @@
  *
  */
 
-#import "CCControlSwitch.h"
-#import "ARCMacro.h"
-#import "ccControlShaders.h"
+#import "MGWUCCControlSwitch.h"
+#import "MGWUARCMacro.h"
+#import "MGWUccControlShaders.h"
 
 #pragma mark CCControlSwitchSprite - Interface 
 
@@ -75,7 +75,7 @@
 
 #pragma mark - CCControlSwitch Implementation
 
-@interface CCControlSwitch ()
+@interface MGWUCCControlSwitch ()
 /** Sprite which represents the view. */
 @property (nonatomic, strong) CCControlSwitchSprite *switchSprite;
 @property (nonatomic, assign) CGFloat               initialTouchXPosition;
@@ -83,7 +83,7 @@
 
 @end
 
-@implementation CCControlSwitch
+@implementation MGWUCCControlSwitch
 @synthesize switchSprite            = _switchSprite;
 @synthesize initialTouchXPosition   = _initialTouchXPosition;
 @synthesize moved                   = _moved;

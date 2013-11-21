@@ -8,6 +8,6 @@
 
 #import "CCLayer.h"
 
-@interface CCLayerSwallowsTouches : CCLayer
+@interface MGWUCCLayerSwallowsTouches : CCLayer
 
 @end

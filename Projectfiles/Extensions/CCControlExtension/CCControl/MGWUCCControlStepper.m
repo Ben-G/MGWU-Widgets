@@ -24,8 +24,8 @@
  *
  */
 
-#import "CCControlStepper.h"
-#import "ARCMacro.h"
+#import "MGWUCCControlStepper.h"
+#import "MGWUARCMacro.h"
 
 #define CCControlStepperLabelColorEnabled   ccc3(55, 55, 55)
 #define CCControlStepperLabelColorDisabled  ccc3(147, 147, 147)
@@ -39,7 +39,7 @@
 #define kAutorepeatDeltaTime                0.15f
 #define kAutorepeatIncreaseTimeIncrement    12
 
-@interface CCControlStepper ()
+@interface MGWUCCControlStepper ()
 @property (nonatomic, strong) CCSprite      *minusSprite;
 @property (nonatomic, strong) CCSprite      *plusSprite;
 @property (nonatomic, strong) CCLabelTTF    *minusLabel;
@@ -59,7 +59,7 @@
 
 @end
 
-@implementation CCControlStepper
+@implementation MGWUCCControlStepper
 @synthesize minusSprite     = _minusSprite;
 @synthesize plusSprite      = _plusSprite;
 @synthesize minusLabel      = _minusLabel;

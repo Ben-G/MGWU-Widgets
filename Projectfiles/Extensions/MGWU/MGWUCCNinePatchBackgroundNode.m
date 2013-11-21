@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "CCNinePatchBackgroundNode.h"
+#import "MGWUCCNinePatchBackgroundNode.h"
 
-@implementation CCNinePatchBackgroundNode
+@implementation MGWUCCNinePatchBackgroundNode
 
 - (void)onExit
 {

@@ -20,7 +20,7 @@
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCScale9Sprite.html
  */
-@interface CCScale9Sprite : CCNode <CCRGBAProtocol>
+@interface MGWUCCScale9Sprite : CCNode <CCRGBAProtocol>
 {
 @public
     CGSize              _originalSize;
@@ -276,7 +276,7 @@
  *
  * @param capInsets The values to use for the cap insets.
  */
-- (CCScale9Sprite *)resizableSpriteWithCapInsets:(CGRect)capInsets;
+- (MGWUCCScale9Sprite *)resizableSpriteWithCapInsets:(CGRect)capInsets;
 
 /** @name Changing the Appearance */
 /**

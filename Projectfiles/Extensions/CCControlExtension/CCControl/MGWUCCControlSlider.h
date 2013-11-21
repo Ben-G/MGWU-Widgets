@@ -24,7 +24,7 @@
  *
  */
 
-#import "CCControl.h"
+#import "MGWUCCControl.h"
 
 /**
  * Slider control for Cocos2D.
@@ -36,7 +36,7 @@
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControlSlider.html
  */
-@interface CCControlSlider : CCControl 
+@interface MGWUCCControlSlider : MGWUCCControl 
 {  
 @public
 	float       _value;

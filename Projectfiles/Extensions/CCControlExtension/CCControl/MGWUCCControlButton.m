@@ -24,17 +24,17 @@
  *
  */
 
-#import "CCControlButton.h"
+#import "MGWUCCControlButton.h"
 
-#import "CCScale9Sprite.h"
-#import "ARCMacro.h"
+#import "MGWUCCScale9Sprite.h"
+#import "MGWUARCMacro.h"
 
 enum
 {
 	kZoomActionTag = 0xCCCB0001,
 };
 
-@interface CCControlButton ()
+@interface MGWUCCControlButton ()
 /** Flag to know if the button is currently pushed.  */
 @property (nonatomic, getter = isPushed) BOOL pushed;
 /** Table of correspondence between the state and its title. */
@@ -48,7 +48,7 @@ enum
 
 @end
 
-@implementation CCControlButton
+@implementation MGWUCCControlButton
 @synthesize pushed                          = _pushed;
 @synthesize titleLabel                      = _titleLabel;
 @synthesize backgroundSprite                = _backgroundSprite;
@@ -83,16 +83,16 @@ enum
 - (id)init
 {
     return [self initWithLabel:[CCLabelTTF labelWithString:@"" fontName:@"Helvetica" fontSize:12]
-              backgroundSprite:SAFE_ARC_AUTORELEASE([[CCScale9Sprite alloc] init])];
+              backgroundSprite:SAFE_ARC_AUTORELEASE([[MGWUCCScale9Sprite alloc] init])];
 }
 
-- (id)initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)label backgroundSprite:(CCScale9Sprite *)backgroundsprite
+- (id)initWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)label backgroundSprite:(MGWUCCScale9Sprite *)backgroundsprite
 {
     if ((self = [super init]))
     {
         NSAssert(label, @"Label must not be nil.");
         NSAssert(backgroundsprite, @"Background sprite must not be nil.");
-        NSAssert([backgroundsprite isKindOfClass:[CCScale9Sprite class]], @"The background sprite must be kind of 'CCScale9Sprite' class.");
+        NSAssert([backgroundsprite isKindOfClass:[MGWUCCScale9Sprite class]], @"The background sprite must be kind of 'CCScale9Sprite' class.");
         
         self.pushed                         = NO;
         self.zoomOnTouchDown                = YES;
@@ -137,7 +137,7 @@ enum
     return self;
 }
 
-+ (id)buttonWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)label backgroundSprite:(CCScale9Sprite *)backgroundsprite
++ (id)buttonWithLabel:(CCNode<CCLabelProtocol,CCRGBAProtocol> *)label backgroundSprite:(MGWUCCScale9Sprite *)backgroundsprite
 {
     return SAFE_ARC_AUTORELEASE([[self alloc] initWithLabel:label backgroundSprite:backgroundsprite]);
 }
@@ -146,7 +146,7 @@ enum
 {
     CCLabelTTF *label = [CCLabelTTF labelWithString:title fontName:fontName fontSize:fontsize];
     
-    return [self initWithLabel:label backgroundSprite:[CCScale9Sprite node]];
+    return [self initWithLabel:label backgroundSprite:[MGWUCCScale9Sprite node]];
 }
 
 + (id)buttonWithTitle:(NSString *)title fontName:(NSString *)fontName fontSize:(NSUInteger)fontsize
@@ -155,14 +155,14 @@ enum
 }
 
 /** Initializes a button with a sprite in background. */
-- (id)initWithBackgroundSprite:(CCScale9Sprite *)sprite
+- (id)initWithBackgroundSprite:(MGWUCCScale9Sprite *)sprite
 {
     CCLabelTTF *label = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30];
     
     return [self initWithLabel:label backgroundSprite:sprite];
 }
 
-+ (id)buttonWithBackgroundSprite:(CCScale9Sprite *)sprite
++ (id)buttonWithBackgroundSprite:(MGWUCCScale9Sprite *)sprite
 {
     return SAFE_ARC_AUTORELEASE([[self alloc] initWithBackgroundSprite:sprite]);
 }
@@ -209,7 +209,7 @@ enum
     
         for (id key in _backgroundSpriteDispatchTable)
         {
-            CCScale9Sprite* sprite = [_backgroundSpriteDispatchTable objectForKey:key];
+            MGWUCCScale9Sprite* sprite = [_backgroundSpriteDispatchTable objectForKey:key];
             [sprite setPreferredSize:preferredSize];
         }
     }
@@ -401,11 +401,11 @@ enum
     return 0;
 }
 
-- (CCScale9Sprite *)backgroundSpriteForState:(CCControlState)state
+- (MGWUCCScale9Sprite *)backgroundSpriteForState:(CCControlState)state
 {
     NSNumber *stateNumber = [NSNumber numberWithLong:state];
     
-    CCScale9Sprite *backgroundSprite = [_backgroundSpriteDispatchTable objectForKey:stateNumber];
+    MGWUCCScale9Sprite *backgroundSprite = [_backgroundSpriteDispatchTable objectForKey:stateNumber];
     
     if (backgroundSprite)
     {
@@ -415,13 +415,13 @@ enum
     return [_backgroundSpriteDispatchTable objectForKey:[NSNumber numberWithInt:CCControlStateNormal]];
 }
 
-- (void)setBackgroundSprite:(CCScale9Sprite *)sprite forState:(CCControlState)state
+- (void)setBackgroundSprite:(MGWUCCScale9Sprite *)sprite forState:(CCControlState)state
 {
     CGSize oldPreferredSize = _preferredSize;
     
     NSNumber *stateNumber                       = [NSNumber numberWithLong:state];
     
-    CCScale9Sprite *previousBackgroundSprite    = [_backgroundSpriteDispatchTable objectForKey:stateNumber];
+    MGWUCCScale9Sprite *previousBackgroundSprite    = [_backgroundSpriteDispatchTable objectForKey:stateNumber];
     if (previousBackgroundSprite)
     {
         [self removeChild:previousBackgroundSprite cleanup:YES];
@@ -452,7 +452,7 @@ enum
 
 - (void)setBackgroundSpriteFrame:(CCSpriteFrame*)spriteFrame forState:(CCControlState)state
 {
-    CCScale9Sprite* sprite = [CCScale9Sprite spriteWithSpriteFrame:spriteFrame];
+    MGWUCCScale9Sprite* sprite = [MGWUCCScale9Sprite spriteWithSpriteFrame:spriteFrame];
     [self setBackgroundSprite:sprite forState:state];
 }
 

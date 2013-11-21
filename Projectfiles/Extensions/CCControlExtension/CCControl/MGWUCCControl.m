@@ -24,10 +24,10 @@
  *
  */
 
-#import "CCControl.h"
-#import "ARCMacro.h"
+#import "MGWUCCControl.h"
+#import "MGWUARCMacro.h"
 
-@interface CCControl ()
+@interface MGWUCCControl ()
 /** 
  * Table of connection between the CCControlEvents and their associated
  * target-actions pairs. For each CCButtonEvents a list of NSInvocation
@@ -110,7 +110,7 @@
 
 @end
 
-@implementation CCControl
+@implementation MGWUCCControl
 @synthesize dispatchTable           = _dispatchTable;
 @synthesize dispatchBlockTable      = _dispatchBlockTable;
 @synthesize defaultTouchPriority    = _defaultTouchPriority;
@@ -480,7 +480,7 @@
     // If the selector accept the sender as third argument
     if ([sig numberOfArguments] >= 3)
     {
-        CCControl *me   = self;
+        MGWUCCControl *me   = self;
         [invocation setArgument:&me atIndex:2];
     }
     

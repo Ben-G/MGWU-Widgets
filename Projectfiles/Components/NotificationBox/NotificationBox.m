@@ -8,7 +8,7 @@
 
 #import "NotificationBox.h"
 #import "CCLabelTTF+adjustToFitRequiredSize.h"
-#import "CCScale9Sprite.h"
+#import "MGWUCCScale9Sprite.h"
 
 #define NOTIFICATION_BOX_FONT_SIZE 16
 #define DEFAULT_FONT @"Avenir-Black"
@@ -26,7 +26,7 @@
     
     if (self)
     {
-        self.backgroundSprite = [CCScale9Sprite spriteWithFile:@"notification-box.png" capInsets:CGRectZero];
+        self.backgroundSprite = [MGWUCCScale9Sprite spriteWithFile:@"notification-box.png" capInsets:CGRectZero];
         self.contentSize = CGSizeMake(BOX_WIDTH, BOX_HEIGHT);
         
         contentLabel = [[CCLabelTTF alloc] initWithString:@"" fontName:DEFAULT_FONT fontSize:NOTIFICATION_BOX_FONT_SIZE];

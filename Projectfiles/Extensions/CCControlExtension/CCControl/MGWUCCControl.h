@@ -77,7 +77,7 @@ typedef void (^CCControlBlock) (id sender, CCControlEvent event);
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControl.html
  */
-@interface CCControl : CCLayer <CCRGBAProtocol>
+@interface MGWUCCControl : CCLayer <CCRGBAProtocol>
 {
 @public
     // CCRGBAProtocol

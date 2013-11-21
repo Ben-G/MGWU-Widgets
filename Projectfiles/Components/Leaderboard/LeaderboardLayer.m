@@ -7,7 +7,7 @@
 //
 
 #import "LeaderboardLayer.h"
-#import "CCScale9Sprite.h"
+#import "MGWUCCScale9Sprite.h"
 #import <mgwuSDK/MGWU.h>
 
 #define FONT_NAME @"Avenir-Black" 

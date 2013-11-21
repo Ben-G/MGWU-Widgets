@@ -24,7 +24,7 @@
  *
  */
 
-#import "CCControl.h"
+#import "MGWUCCControl.h"
 
 /**
  * CCControlSwitch is a switch control for Cocos2D.
@@ -40,7 +40,7 @@
  *
  * @see http://yannickloriot.com/library/ios/cccontrolextension/Classes/CCControlSwitch.html
  */
-@interface CCControlSwitch : CCControl
+@interface MGWUCCControlSwitch : MGWUCCControl
 
 #pragma mark Contructors - Initializers
 /** @name Creating Switches */
