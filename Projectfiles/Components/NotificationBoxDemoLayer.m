@@ -36,7 +36,7 @@
 
 - (void)showNotification
 {
-    NSString *notificationMessage = @"Demo";
+    NSString *notificationMessage = @"This is a long test notification";
     [NotificationBox presentNotificationBoxOnNode:self withText:notificationMessage duration:2.f];
 }
 

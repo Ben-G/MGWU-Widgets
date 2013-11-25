@@ -1,6 +1,6 @@
 # MakeGamesWithUs Widgets
 
-This project contains multiple Cocos2D components which can easily be used in many different games. Currently following components are contained:
+This project contains multiple cocos2D components which can easily be used in many different games. Currently following components are contained:
 
 - *ScoreboardEntry:* A BitmapFont based score display. Can change scores animated
 - *LeaderboardLayer:* A simple Highscore-Board. It uses the MGWU Framework to download highscores and displays the personal highscore and the global top ten.
@@ -39,3 +39,16 @@ Basic usage:
 	}
 	
 More details [here.](https://www.makegameswith.us/gamernews/282/mgwu-popup-customizable-alertview-for-cocos2d)
+
+##Notification Box
+Presents a notification at the top of the screen for multiple seconds, animates appearance and disappearance:
+
+![image](https://s3.amazonaws.com/mgwu-misc/Widgets/NotificationBox.png)
+
+Basic usage:
+
+	- (void)showNotification
+	{
+	    NSString *notificationMessage = @"This is a long test notification";
+	    [NotificationBox presentNotificationBoxOnNode:self withText:notificationMessage duration:2.f];
+	}
