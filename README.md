@@ -10,3 +10,32 @@ This project contains multiple Cocos2D components which can easily be used in ma
 - *NotificationBox:* A box that displays a notification at the top of the screen.
 
 The project provides demo scenes for each component that demonstrate how to use them.
+
+##Popup
+Provides a customizable cocos2d Popup:
+![image](https://static.makegameswith.us/gamernews_images/cMgi7u9PIl/customAlert.png)
+
+Basic usage:
+
+	#import "Popup.h"
+	
+	[...]
+	
+	- (void)showPopup 
+	{
+	    NSString *popUpMessage = @"Submit score to \n global Leaderboard";
+	    popup = [PopUp showWithMessage:popUpMessage okButtonTitle:@"Ok" otherButtonTitles:@[@"Cancel"] target:self selector:@selector(popUpButtonClicked:) showsInputField:TRUE];
+	}
+	
+	- (void)popUpButtonClicked:(int)buttonIndex
+	{
+	    if (buttonIndex == OK_BUTTON_INDEX)
+	    {
+	        // OK button selected
+	        contentLabel.string = [popup textFieldText];
+	    }
+	   
+	    [popup dismiss];
+	}
+	
+More details [here.](https://www.makegameswith.us/gamernews/282/mgwu-popup-customizable-alertview-for-cocos2d)
