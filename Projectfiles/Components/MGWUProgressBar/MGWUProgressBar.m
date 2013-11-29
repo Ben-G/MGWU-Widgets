@@ -7,7 +7,8 @@
 //
 
 #import "MGWUProgressBar.h"
-#import "MGWUProgressBarCCScale9Sprite.m"
+#import "MGWUProgressBarCCScale9Sprite.h"
+#import "MGWUProgressBar_Protected.h"
 
 #define MAXIMUMSIZE_DEFAULT CGSizeZero
 #define MAXIMUMVALUE_DEFAULT 0
@@ -20,7 +21,7 @@
 
 + (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(MGWUCCScale9Sprite*)fillingImage {
     
-    MGWUProgressBar *actualProgressBar = [MGWUProgressBarCCScale9Sprite spriteWithFile:@"notification-box.png" capInsets:CGRectZero];
+    MGWUProgressBar *actualProgressBar = [[MGWUProgressBarCCScale9Sprite alloc] initProtectedWithFile:nil capInsets:CGRectZero];
     actualProgressBar.barStyle = style;
     
     return actualProgressBar;
@@ -41,6 +42,11 @@
 
 #pragma mark - Setter Overriding
 
+- (void)setMaximumSize:(CGSize)maximumSize {
+    _maximumSize = maximumSize;
+    self.contentSize = maximumSize;
+}
+
 - (void)setCurrentValue:(NSInteger)currentValue {
     if (_currentValue != currentValue) {
         _currentValue = currentValue;
@@ -58,7 +64,7 @@
 
 - (void)redraw:(BOOL)animated {
     // calculate new size
-    CGFloat progressFraction = self.currentValue / self.maximumValue;
+    CGFloat progressFraction = (self.currentValue*1.f) / (self.maximumValue*1.f);
     CGSize futureSize = CGSizeZero;
     
     if (self.barStyle == MGWUProgressBarStyleHorizontal) {
@@ -70,7 +76,8 @@
     if (animated) {
         
     } else {
-        self.size = futureSize;
+        self.contentSize = self.maximumSize;
+        self.contentNode.contentSize = futureSize;
     }
 }
 

@@ -6,8 +6,10 @@
 //
 //
 
-#import "MGWUCCScale9Sprite.h"
+#import "MGWUProgressBar.h"
 
-@interface MGWUProgressBarCCScale9Sprite : MGWUCCScale9Sprite
+@interface MGWUProgressBarCCScale9Sprite : MGWUProgressBar
+
+- (id)initProtectedWithFile:(NSString *)file capInsets:(CGRect)capInsets;
 
 @end

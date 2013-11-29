@@ -15,6 +15,7 @@
 #import "PopupDemoLayer.h"
 #import "PopupInputDemoLayer.h"
 #import "NotificationBoxDemoLayer.h"
+#import "MGWUProgressBarDemoLayer.h"
 
 @interface MainMenuLayer (PrivateMethods)
 @end
@@ -46,7 +47,10 @@
         CCLabelTTF *notificationBoxLabel = [CCLabelTTF labelWithString:@"Notification" fontName:@"Arial" fontSize:14];
         CCMenuItem *notificationBoxItem = [CCMenuItemLabel itemWithLabel:notificationBoxLabel target:self selector:@selector(presentNotificationBox)];
         
-        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, notificationBoxItem, nil];
+        CCLabelTTF *progessBarLabel = [CCLabelTTF labelWithString:@"Progess Bar" fontName:@"Arial" fontSize:14];
+        CCMenuItem *progressBarItem = [CCMenuItemLabel itemWithLabel:progessBarLabel target:self selector:@selector(presentProgressBar)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, notificationBoxItem, progressBarItem,nil];
         menu.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
         
         [menu alignItemsVertically];
@@ -85,6 +89,11 @@
 - (void)presentNotificationBox
 {
     [[CCDirector sharedDirector] pushScene:(CCScene *)[[NotificationBoxDemoLayer alloc] init]];
+}
+
+- (void)presentProgressBar
+{
+    [[CCDirector sharedDirector] pushScene:(CCScene *)[[MGWUProgressBarDemoLayer alloc] init]];
 }
 
 @end
