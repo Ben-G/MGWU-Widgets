@@ -47,7 +47,7 @@
         CCLabelTTF *notificationBoxLabel = [CCLabelTTF labelWithString:@"Notification" fontName:@"Arial" fontSize:14];
         CCMenuItem *notificationBoxItem = [CCMenuItemLabel itemWithLabel:notificationBoxLabel target:self selector:@selector(presentNotificationBox)];
         
-        CCLabelTTF *progessBarLabel = [CCLabelTTF labelWithString:@"Progess Bar" fontName:@"Arial" fontSize:14];
+        CCLabelTTF *progessBarLabel = [CCLabelTTF labelWithString:@"Progress Bar" fontName:@"Arial" fontSize:14];
         CCMenuItem *progressBarItem = [CCMenuItemLabel itemWithLabel:progessBarLabel target:self selector:@selector(presentProgressBar)];
         
         CCMenu *menu = [CCMenu menuWithItems:leaderboardItem, scoreBoardItem, menuBlockingItem, popupItem, inputPopupItem, notificationBoxItem, progressBarItem,nil];

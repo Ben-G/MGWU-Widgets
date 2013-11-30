@@ -145,7 +145,7 @@
 		62C9A73F1834169F00C6030D /* notification-box.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C9A73D1834169F00C6030D /* notification-box.png */; };
 		62EEECE518491A010069044C /* MGWUProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECE418491A010069044C /* MGWUProgressBar.m */; };
 		62EEECE818491C270069044C /* MGWUProgressBarCCScale9Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECE718491C270069044C /* MGWUProgressBarCCScale9Sprite.m */; };
-		62EEECEB18491C670069044C /* MGWUProgressBarCCNodeRGBA.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECEA18491C670069044C /* MGWUProgressBarCCNodeRGBA.m */; };
+		62EEECEB18491C670069044C /* MGWUProgressBarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECEA18491C670069044C /* MGWUProgressBarColor.m */; };
 		62EEECEE184921370069044C /* MGWUProgressBarDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECED184921370069044C /* MGWUProgressBarDemoLayer.m */; };
 		62EEECF2184969630069044C /* MGWUColorNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECF1184969630069044C /* MGWUColorNode.m */; };
 		DC1BE6A014F417CC00F49D25 /* Ubuntu-B.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC1BE68C14F417CC00F49D25 /* Ubuntu-B.ttf */; };
@@ -387,8 +387,8 @@
 		62EEECE418491A010069044C /* MGWUProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBar.m; sourceTree = "<group>"; };
 		62EEECE618491C270069044C /* MGWUProgressBarCCScale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBarCCScale9Sprite.h; sourceTree = "<group>"; };
 		62EEECE718491C270069044C /* MGWUProgressBarCCScale9Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBarCCScale9Sprite.m; sourceTree = "<group>"; };
-		62EEECE918491C670069044C /* MGWUProgressBarCCNodeRGBA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBarCCNodeRGBA.h; sourceTree = "<group>"; };
-		62EEECEA18491C670069044C /* MGWUProgressBarCCNodeRGBA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBarCCNodeRGBA.m; sourceTree = "<group>"; };
+		62EEECE918491C670069044C /* MGWUProgressBarColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBarColor.h; sourceTree = "<group>"; };
+		62EEECEA18491C670069044C /* MGWUProgressBarColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBarColor.m; sourceTree = "<group>"; };
 		62EEECEC184921370069044C /* MGWUProgressBarDemoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBarDemoLayer.h; sourceTree = "<group>"; };
 		62EEECED184921370069044C /* MGWUProgressBarDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBarDemoLayer.m; sourceTree = "<group>"; };
 		62EEECEF1849250A0069044C /* MGWUProgressBar_Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBar_Protected.h; sourceTree = "<group>"; };
@@ -819,8 +819,8 @@
 				62EEECE418491A010069044C /* MGWUProgressBar.m */,
 				62EEECE618491C270069044C /* MGWUProgressBarCCScale9Sprite.h */,
 				62EEECE718491C270069044C /* MGWUProgressBarCCScale9Sprite.m */,
-				62EEECE918491C670069044C /* MGWUProgressBarCCNodeRGBA.h */,
-				62EEECEA18491C670069044C /* MGWUProgressBarCCNodeRGBA.m */,
+				62EEECE918491C670069044C /* MGWUProgressBarColor.h */,
+				62EEECEA18491C670069044C /* MGWUProgressBarColor.m */,
 				62EEECEF1849250A0069044C /* MGWUProgressBar_Protected.h */,
 			);
 			path = MGWUProgressBar;
@@ -1232,7 +1232,7 @@
 				62EEECF2184969630069044C /* MGWUColorNode.m in Sources */,
 				62753C1517C0D096005F379C /* CCNode+Autolayout.m in Sources */,
 				62753C1617C0D096005F379C /* SWMultiColumnTableView.m in Sources */,
-				62EEECEB18491C670069044C /* MGWUProgressBarCCNodeRGBA.m in Sources */,
+				62EEECEB18491C670069044C /* MGWUProgressBarColor.m in Sources */,
 				62753C1717C0D096005F379C /* SWScrollView.m in Sources */,
 				62753C1817C0D096005F379C /* SWSorting.m in Sources */,
 				62753C1917C0D096005F379C /* SWTableView.m in Sources */,

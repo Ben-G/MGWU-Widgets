@@ -6,11 +6,11 @@
 //
 //
 
-#import "MGWUProgressBarCCNodeRGBA.h"
+#import "MGWUProgressBarColor.h"
 #import "MGWUProgressBar_Protected.h"
 #import "MGWUColorNode.h"
 
-@implementation MGWUProgressBarCCNodeRGBA
+@implementation MGWUProgressBarColor
 
 - (id)initWithColor:(ccColor4F)color {
     self = [super init];

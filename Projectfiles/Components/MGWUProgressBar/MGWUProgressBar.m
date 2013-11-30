@@ -8,7 +8,7 @@
 
 #import "MGWUProgressBar.h"
 #import "MGWUProgressBarCCScale9Sprite.h"
-#import "MGWUProgressBarCCNodeRGBA.h"
+#import "MGWUProgressBarColor.h"
 #import "MGWUProgressBar_Protected.h"
 
 #define MAXIMUMSIZE_DEFAULT CGSizeZero
@@ -25,7 +25,7 @@
 }
 
 + (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(ccColor4F)fillingColor {
-    MGWUProgressBar *actualProgressBar = [[MGWUProgressBarCCNodeRGBA alloc] initWithColor:fillingColor];
+    MGWUProgressBar *actualProgressBar = [[MGWUProgressBarColor alloc] initWithColor:fillingColor];
     actualProgressBar.barStyle = style;
     
     return actualProgressBar;
@@ -73,9 +73,8 @@
 
 #pragma mark - Private Methods
 
-- (void)redraw:(BOOL)animated {
-    // calculate new size
-    CGFloat progressFraction = (self.currentValue*1.f) / (self.maximumValue*1.f);
+- (CGSize)calculateFutureSizeWithValue:(CGFloat)value {
+    CGFloat progressFraction = (value*1.f) / (self.maximumValue*1.f);
     CGSize futureSize = CGSizeZero;
     
     if (self.barStyle == MGWUProgressBarStyleHorizontal) {
@@ -83,6 +82,13 @@
     } else if (self.barStyle == MGWUProgressBarStyleVertical) {
         futureSize = CGSizeMake(self.maximumSize.width, self.maximumSize.height * progressFraction);
     }
+    
+    return futureSize;
+}
+
+- (void)redraw:(BOOL)animated {
+    // calculate new size
+    CGSize futureSize = [self calculateFutureSizeWithValue:self.currentValue];
     
     if (animated) {
         CGFloat progressDelta = ABS(self.currentDisplayValue - self.currentValue) / self.maximumValue;
@@ -98,15 +104,8 @@
 
 - (void)redrawWithTargetValue:(CGFloat)targetValue {
     // calculate new size
-    CGFloat progressFraction = (targetValue*1.f) / (self.maximumValue*1.f);
-    CGSize futureSize = CGSizeZero;
-    
-    if (self.barStyle == MGWUProgressBarStyleHorizontal) {
-        futureSize = CGSizeMake(self.maximumSize.width * progressFraction, self.maximumSize.height);
-    } else if (self.barStyle == MGWUProgressBarStyleVertical) {
-        futureSize = CGSizeMake(self.maximumSize.width, self.maximumSize.height * progressFraction);
-    }
-    
+    CGSize futureSize = [self calculateFutureSizeWithValue:targetValue];
+
     self.contentNode.contentSize = futureSize;
 }
 
