@@ -9,5 +9,10 @@
 #import "MGWUProgressBar.h"
 
 @interface MGWUProgressBar ()
-    @property (nonatomic, strong) CCNode *contentNode;
+
+-(void)redraw:(BOOL)animated;
+
+@property (nonatomic, assign) CGFloat currentDisplayValue;
+@property (nonatomic, strong) CCNode *contentNode;
+
 @end

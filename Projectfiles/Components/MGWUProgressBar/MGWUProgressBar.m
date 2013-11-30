@@ -35,6 +35,7 @@
     if (self) {
         self.maximumSize = MAXIMUMSIZE_DEFAULT;
         self.maximumValue = MAXIMUMVALUE_DEFAULT;
+        [self redraw:FALSE];
     }
     
     return self;
@@ -47,8 +48,9 @@
     self.contentSize = maximumSize;
 }
 
-- (void)setCurrentValue:(NSInteger)currentValue {
+- (void)setCurrentValue:(CGFloat)currentValue {
     if (_currentValue != currentValue) {
+        _currentDisplayValue = _currentValue;
         _currentValue = currentValue;
         
         if ((CGSizeEqualToSize(self.maximumSize, MAXIMUMSIZE_DEFAULT)) || (self.maximumValue == MAXIMUMVALUE_DEFAULT)) {
@@ -58,6 +60,11 @@
         
         [self redraw:self.changeValueAnimated];
     }
+}
+
+- (void)setCurrentDisplayValue:(CGFloat)currentDisplayValue {
+    _currentDisplayValue = currentDisplayValue;
+    [self redrawWithTargetValue:_currentDisplayValue];
 }
 
 #pragma mark - Private Methods
@@ -74,11 +81,29 @@
     }
     
     if (animated) {
-        
+        CGFloat progressDelta = ABS(self.currentDisplayValue - self.currentValue) / self.maximumValue;
+        CGFloat duration = progressDelta * 3.f;
+        CCActionTween *tween = [CCActionTween actionWithDuration:duration key:@"currentDisplayValue" from:self.currentDisplayValue to:self.currentValue];
+        [self runAction:tween];
     } else {
+        _currentDisplayValue = self.currentValue;
         self.contentSize = self.maximumSize;
         self.contentNode.contentSize = futureSize;
     }
+}
+
+- (void)redrawWithTargetValue:(CGFloat)targetValue {
+    // calculate new size
+    CGFloat progressFraction = (targetValue*1.f) / (self.maximumValue*1.f);
+    CGSize futureSize = CGSizeZero;
+    
+    if (self.barStyle == MGWUProgressBarStyleHorizontal) {
+        futureSize = CGSizeMake(self.maximumSize.width * progressFraction, self.maximumSize.height);
+    } else if (self.barStyle == MGWUProgressBarStyleVertical) {
+        futureSize = CGSizeMake(self.maximumSize.width, self.maximumSize.height * progressFraction);
+    }
+    
+    self.contentNode.contentSize = futureSize;
 }
 
 @end

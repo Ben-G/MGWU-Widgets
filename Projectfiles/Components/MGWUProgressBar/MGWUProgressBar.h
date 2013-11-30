@@ -21,8 +21,8 @@ typedef NS_ENUM(NSInteger, MGWUProgressBarStyle) {
 + (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(MGWUCCScale9Sprite*)fillingColor;
 
 @property (nonatomic, assign) CGSize maximumSize;
-@property (nonatomic, assign) NSInteger maximumValue;
-@property (nonatomic, assign) NSInteger currentValue;
+@property (nonatomic, assign) CGFloat maximumValue;
+@property (nonatomic, assign) CGFloat currentValue;
 @property (nonatomic, assign) BOOL changeValueAnimated;
 @property (nonatomic, assign) MGWUProgressBarStyle barStyle;
 

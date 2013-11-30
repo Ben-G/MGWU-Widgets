@@ -26,4 +26,16 @@
     return self;
 }
 
+#pragma mark - overriden methods
+
+//- (void)redraw:(BOOL)animated {
+//    [super redraw:animated];
+//    
+//    if (self.currentDisplayValue == 0) {
+//        self.visible = FALSE;
+//    } else {
+//        self.visible = TRUE;
+//    }
+//}
+
 @end
