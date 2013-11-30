@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, MGWUProgressBarStyle) {
 
 + (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(MGWUCCScale9Sprite*)fillingImage;
 
-+ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(MGWUCCScale9Sprite*)fillingColor;
++ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(ccColor4F)fillingColor;
 
 @property (nonatomic, assign) CGSize maximumSize;
 @property (nonatomic, assign) CGFloat maximumValue;

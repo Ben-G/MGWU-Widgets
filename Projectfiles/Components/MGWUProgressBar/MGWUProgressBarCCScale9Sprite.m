@@ -18,6 +18,7 @@
     if (self) {
         self.contentNode = [MGWUCCScale9Sprite spriteWithFile:@"notification-box.png" capInsets:CGRectZero];
         [self addChild:self.contentNode];
+
         self.contentNode.anchorPoint = ccp(0, 0);
         self.contentNode.position = ccp(0, 0);
         self.contentNode.contentSize = CGSizeZero;

@@ -8,6 +8,7 @@
 
 #import "MGWUProgressBar.h"
 #import "MGWUProgressBarCCScale9Sprite.h"
+#import "MGWUProgressBarCCNodeRGBA.h"
 #import "MGWUProgressBar_Protected.h"
 
 #define MAXIMUMSIZE_DEFAULT CGSizeZero
@@ -15,13 +16,16 @@
 
 @implementation MGWUProgressBar
 
-+ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(MGWUCCScale9Sprite*)fillingColor {
-    return nil;
-}
-
 + (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(MGWUCCScale9Sprite*)fillingImage {
     
     MGWUProgressBar *actualProgressBar = [[MGWUProgressBarCCScale9Sprite alloc] initProtectedWithFile:nil capInsets:CGRectZero];
+    actualProgressBar.barStyle = style;
+    
+    return actualProgressBar;
+}
+
++ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(ccColor4F)fillingColor {
+    MGWUProgressBar *actualProgressBar = [[MGWUProgressBarCCNodeRGBA alloc] initWithColor:fillingColor];
     actualProgressBar.barStyle = style;
     
     return actualProgressBar;

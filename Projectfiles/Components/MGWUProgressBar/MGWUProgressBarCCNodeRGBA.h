@@ -7,7 +7,10 @@
 //
 
 #import "CCNode.h"
+#import "MGWUProgressBar.h"
 
-@interface MGWUProgressBarCCNodeRGBA : CCNodeRGBA
+@interface MGWUProgressBarCCNodeRGBA : MGWUProgressBar
+
+- (id)initWithColor:(ccColor4F)color;
 
 @end
