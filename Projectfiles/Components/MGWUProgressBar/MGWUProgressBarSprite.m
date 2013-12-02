@@ -32,13 +32,13 @@
 - (void)redraw:(BOOL)animated {
     [super redraw:animated];
     
-    [(CCSprite *)self.contentNode setTextureRect:CGRectMake([[((CCSprite *) self.contentNode) texture] contentSize].width- self.contentNode.contentSize.width, [[((CCSprite *) self.contentNode) texture] contentSize].height-self.contentNode.contentSize.height, self.contentNode.contentSize.width, self.contentNode.contentSize.height)];
+    [(CCSprite *)self.contentNode setTextureRect:CGRectMake(0, 0, self.contentNode.contentSize.width, self.contentNode.contentSize.height)];
 }
 
 - (void)redrawWithTargetValue:(CGFloat)targetValue {
     [super redrawWithTargetValue:targetValue];
     
-    [(CCSprite *)self.contentNode setTextureRect:CGRectMake([[((CCSprite *) self.contentNode) texture] contentSize].width- self.contentNode.contentSize.width, [[((CCSprite *) self.contentNode) texture] contentSize].height-self.contentNode.contentSize.height, self.contentNode.contentSize.width, self.contentNode.contentSize.height)];
+    [(CCSprite *)self.contentNode setTextureRect:CGRectMake(0, 0, self.contentNode.contentSize.width, self.contentNode.contentSize.height)];
 }
 
 
