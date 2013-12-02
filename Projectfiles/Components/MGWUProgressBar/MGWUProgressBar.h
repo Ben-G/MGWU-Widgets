@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, MGWUProgressBarStyle) {
 
 @interface MGWUProgressBar : CCNode
 
-+ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(MGWUCCScale9Sprite*)fillingImage;
++ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(NSString*)fillingImage capInsets:(CGRect)capInsets;
 
 + (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingColor:(ccColor4F)fillingColor;
 

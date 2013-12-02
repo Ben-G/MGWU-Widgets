@@ -439,7 +439,7 @@ enum positions
         [_scale9Image addChild:_bottomRight z:2 tag:pBottomRight];
     }
     
-    [self setContentSize:rect.size];
+    //[self setContentSize:rect.size];
     [self addChild:_scale9Image];
     
     if (_spritesGenerated)

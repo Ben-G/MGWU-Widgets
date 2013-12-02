@@ -16,9 +16,9 @@
 
 @implementation MGWUProgressBar
 
-+ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(MGWUCCScale9Sprite*)fillingImage {
++ (MGWUProgressBar*)progressBarWithStyle:(MGWUProgressBarStyle)style fillingImage:(NSString*)fillingImage capInsets:(CGRect)capInsets {
     
-    MGWUProgressBar *actualProgressBar = [[MGWUProgressBarCCScale9Sprite alloc] initProtectedWithFile:nil capInsets:CGRectZero];
+    MGWUProgressBar *actualProgressBar = [[MGWUProgressBarCCScale9Sprite alloc] initProtectedWithFile:fillingImage capInsets:capInsets];
     actualProgressBar.barStyle = style;
     
     return actualProgressBar;

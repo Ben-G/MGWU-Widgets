@@ -16,7 +16,7 @@
     self = [super init];
     
     if (self) {
-        self.contentNode = [MGWUCCScale9Sprite spriteWithFile:@"notification-box.png" capInsets:CGRectZero];
+        self.contentNode = [MGWUCCScale9Sprite spriteWithFile:file capInsets:capInsets];
         [self addChild:self.contentNode];
 
         self.contentNode.anchorPoint = ccp(0, 0);
