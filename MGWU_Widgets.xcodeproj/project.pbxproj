@@ -143,6 +143,8 @@
 		62C9A73B1834142E00C6030D /* NotificationBoxDemoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C9A73A1834142E00C6030D /* NotificationBoxDemoLayer.m */; };
 		62C9A73E1834169F00C6030D /* notification-box-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C9A73C1834169F00C6030D /* notification-box-hd.png */; };
 		62C9A73F1834169F00C6030D /* notification-box.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C9A73D1834169F00C6030D /* notification-box.png */; };
+		62EECE50184D32A6008B17A7 /* MGWUProgressBarSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EECE4F184D32A6008B17A7 /* MGWUProgressBarSprite.m */; };
+		62EECE53184D3531008B17A7 /* metercolors.png in Resources */ = {isa = PBXBuildFile; fileRef = 62EECE52184D3531008B17A7 /* metercolors.png */; };
 		62EEECE518491A010069044C /* MGWUProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECE418491A010069044C /* MGWUProgressBar.m */; };
 		62EEECE818491C270069044C /* MGWUProgressBarCCScale9Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECE718491C270069044C /* MGWUProgressBarCCScale9Sprite.m */; };
 		62EEECEB18491C670069044C /* MGWUProgressBarColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 62EEECEA18491C670069044C /* MGWUProgressBarColor.m */; };
@@ -383,6 +385,9 @@
 		62C9A73A1834142E00C6030D /* NotificationBoxDemoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationBoxDemoLayer.m; sourceTree = "<group>"; };
 		62C9A73C1834169F00C6030D /* notification-box-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box-hd.png"; sourceTree = "<group>"; };
 		62C9A73D1834169F00C6030D /* notification-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box.png"; sourceTree = "<group>"; };
+		62EECE4E184D32A6008B17A7 /* MGWUProgressBarSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBarSprite.h; sourceTree = "<group>"; };
+		62EECE4F184D32A6008B17A7 /* MGWUProgressBarSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBarSprite.m; sourceTree = "<group>"; };
+		62EECE52184D3531008B17A7 /* metercolors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metercolors.png; sourceTree = "<group>"; };
 		62EEECE318491A010069044C /* MGWUProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBar.h; sourceTree = "<group>"; };
 		62EEECE418491A010069044C /* MGWUProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGWUProgressBar.m; sourceTree = "<group>"; };
 		62EEECE618491C270069044C /* MGWUProgressBarCCScale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGWUProgressBarCCScale9Sprite.h; sourceTree = "<group>"; };
@@ -812,9 +817,18 @@
 			path = NotificationBox;
 			sourceTree = "<group>";
 		};
+		62EECE51184D3531008B17A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62EECE52184D3531008B17A7 /* metercolors.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		62EEECE21849192A0069044C /* MGWUProgressBar */ = {
 			isa = PBXGroup;
 			children = (
+				62EECE51184D3531008B17A7 /* Resources */,
 				62EEECE318491A010069044C /* MGWUProgressBar.h */,
 				62EEECE418491A010069044C /* MGWUProgressBar.m */,
 				62EEECE618491C270069044C /* MGWUProgressBarCCScale9Sprite.h */,
@@ -822,6 +836,8 @@
 				62EEECE918491C670069044C /* MGWUProgressBarColor.h */,
 				62EEECEA18491C670069044C /* MGWUProgressBarColor.m */,
 				62EEECEF1849250A0069044C /* MGWUProgressBar_Protected.h */,
+				62EECE4E184D32A6008B17A7 /* MGWUProgressBarSprite.h */,
+				62EECE4F184D32A6008B17A7 /* MGWUProgressBarSprite.m */,
 			);
 			path = MGWUProgressBar;
 			sourceTree = "<group>";
@@ -1063,6 +1079,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EECE53184D3531008B17A7 /* metercolors.png in Resources */,
 				DCC1A0FA13A94ED5005BD75D /* Default.png in Resources */,
 				62407CE4183C197A00C188FF /* background.png in Resources */,
 				DCC1A0FC13A94ED5005BD75D /* fps_images.png in Resources */,
@@ -1246,6 +1263,7 @@
 				62753C2717C0FE53005F379C /* CCMenuBlockingDemoLayer.m in Sources */,
 				62753C2D17C1050E005F379C /* PopUp.m in Sources */,
 				62753C3117C10595005F379C /* PopupDemoLayer.m in Sources */,
+				62EECE50184D32A6008B17A7 /* MGWUProgressBarSprite.m in Sources */,
 				62753C3517C10752005F379C /* MGWUCCNinePatchBackgroundNode.m in Sources */,
 				62753C3817C107EC005F379C /* MGWUCCLayerSwallowsTouches.m in Sources */,
 				62EEECE818491C270069044C /* MGWUProgressBarCCScale9Sprite.m in Sources */,

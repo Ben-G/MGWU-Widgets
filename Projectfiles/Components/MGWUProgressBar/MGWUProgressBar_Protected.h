@@ -10,7 +10,9 @@
 
 @interface MGWUProgressBar ()
 
--(void)redraw:(BOOL)animated;
+- (void)redraw:(BOOL)animated;
+- (void)redrawWithTargetValue:(CGFloat)targetValue;
+- (CGSize)calculateFutureSizeWithValue:(CGFloat)value;
 
 @property (nonatomic, assign) CGFloat currentDisplayValue;
 @property (nonatomic, strong) CCNode *contentNode;

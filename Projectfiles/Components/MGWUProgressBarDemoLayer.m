@@ -37,10 +37,12 @@
         
 //        progressBar = [MGWUProgressBar progressBarWithStyle:MGWUProgressBarStyleHorizontal fillingColor:ccc4f(255, 0, 0, 255)];
         
-        progressBar = [MGWUProgressBar progressBarWithStyle:MGWUProgressBarStyleHorizontal fillingImage:@"notification-box.png" capInsets:CGRectMake(1, 1, 13, 48)];
+//        progressBar = [MGWUProgressBar progressBarWithStyle:MGWUProgressBarStyleHorizontal fillingImage:@"notification-box.png" capInsets:CGRectMake(1, 1, 13, 48)];
+        
+        progressBar = [MGWUProgressBar progressBarWithStyle:MGWUProgressBarStyleHorizontal revealingSprite:@"metercolors.png"];
         
         progressBar.position = ccp(50, (self.contentSize.height/3) * 2);
-        progressBar.maximumSize = CGSizeMake(self.contentSize.width - 2 * progressBar.position.x, 50);
+//        progressBar.maximumSize = CGSizeMake(self.contentSize.width - 2 * progressBar.position.x, 50);
         progressBar.maximumValue = 100.f;
         progressBar.changeValueAnimated = TRUE;
         
